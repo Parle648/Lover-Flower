@@ -1,0 +1,133 @@
+.greenBtn {
+    width: 225px;
+    height: 50px;
+    background-color: #43FFD2;
+    color: #040A0A;
+    text-align: center;
+    font-family: 'Oswald';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    transition: .35s;
+    &:hover {
+        background-color: #7D2253;
+        color: #fff;
+    }
+    &:focus {
+        outline: none;
+        border: 1px solid #7D2253;
+    }
+    &:active {
+        background: #7D2253;
+        color: #fff;
+        box-shadow: 0px 0px 10px 0px #1B000E inset;
+    }
+}
+
+.btnDisabled {
+    border: 1px solid #555;
+    background: transparent;
+    color: #555;
+    cursor: auto;
+    &:hover {
+        border: 1px solid #555;
+        background: transparent;
+        color: #555;
+    }
+    &:focus {
+        border: 1px solid #555;
+        background: transparent;
+        color: #555;
+    }
+    &:active {
+        border: 1px solid #555;
+        background: transparent;
+        color: #555;
+    }
+}
+
+$brackpoints: (
+    sm: 500px,
+    md: 750px,
+    lg: 1100px,
+    xl: 1200px,
+);
+
+@mixin sm-u(){
+    @media (min-width: map-get($brackpoints, sm)){
+        @content;
+    }
+};
+
+@mixin md-u(){
+    @media (min-width: map-get($brackpoints, md)){
+        @content;
+    }
+};
+
+@mixin lg-u(){
+    @media (min-width: map-get($brackpoints, lg)){
+        @content;
+    }
+};
+
+// ONLY
+
+@mixin sm(){
+    @media (max-width: map-get($brackpoints, md) - .2px) and (min-width: map-get($brackpoints, sm)){
+        @content;
+    }
+};
+
+@mixin md(){
+    @media (max-width: map-get($brackpoints, lg) - .2px) and (min-width: map-get($brackpoints, md)){
+        @content;
+    }
+};
+
+@mixin lg(){
+    @media (max-width: map-get($brackpoints, xl) - .2px) and (min-width: map-get($brackpoints, lg)){
+        @content;
+    }
+};
+
+@mixin xl(){
+    @media (min-width: map-get($brackpoints, xl)){
+        @content;
+    }
+};
+
+//Mobile first
+
+@mixin xl-d(){
+    @media (max-width: map-get($brackpoints, xl) - .2px){
+        @content
+    }
+};
+
+@mixin lg-m-d(){
+    @media (max-width: map-get($brackpoints, lg-m) - .2px){
+        @content
+    }
+};
+
+@mixin lg-d(){
+    @media (max-width: map-get($brackpoints, lg) - .2px){
+        @content
+    }
+};
+
+@mixin md-d{
+    @media (max-width: map-get($brackpoints, md) - .2px){
+        @content
+    }
+};
+
+@mixin sm-d{
+    @media (max-width: map-get($brackpoints, sm) - .2px){
+        @content
+    }
+};
