@@ -1,0 +1,32 @@
+.block {
+    position: relative;
+}
+
+.img {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.ttl {
+    color: #FFF;
+    font-family: 'Oswald';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.cost {
+    color: #FFF;
+    font-family: 'Oswald';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.56px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}

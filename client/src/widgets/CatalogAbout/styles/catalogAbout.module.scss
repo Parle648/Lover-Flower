@@ -1,0 +1,89 @@
+@import '../../../Scss/global/global.scss';
+
+.container {
+    position: relative;
+    height: 1000px;
+    background-color: #040A0A;
+    @include lg-d {
+        height: auto;
+    }
+}
+
+.background {
+    width: 100%;
+    height: 1000px;
+    position: absolute;
+    top: 104px;
+    @include lg-d {
+        height: auto;
+        top: 0;
+    }
+}
+
+.second {    
+    width: 446px;
+    margin: -452px 0 0 663px;
+    & > h2 {
+        width: 246px;
+    }
+    @include lg-d {
+        width: 540px;
+        margin: 0;
+    }
+}
+
+.third {
+    margin: 31px 0 0 568px;
+    @include lg-d {
+        width: 540px;
+        margin: 0;
+    }
+}
+
+.wrapper {
+    width: 1109px;
+    margin: -1px auto;
+    padding-top: 100px;
+    @include lg-d {
+        width: 92%;
+    }
+}
+
+.ttl {
+    color: #FFF;
+    font-family: 'Cormorant';
+    font-size: 100px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    @include lg-d {
+        text-align: center;
+        position: relative;
+    }
+    @include md-d {
+        font-size: 40px;
+    }
+}
+
+.paragraph {
+    width: 500px;
+    margin: 0 0 30px 95px;
+    color: #FFF;
+    font-family: 'Oswald';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 26px;
+    letter-spacing: 0.7px;
+    @include lg-d {
+        margin: 0 auto 40px;
+        position: relative;
+    }
+
+    @include md-d {
+        display: none;
+    }
+}

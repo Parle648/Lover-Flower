@@ -1,10 +1,14 @@
 import React from 'react';
-import Header from '../../widgets/Header/HeroSection';
+import HeroSection from '../../widgets/Header/HeroSection';
+import CatalogAbout from '../../widgets/CatalogAbout/index';
+import Populars from '../../widgets/PopularFlowers/index';
 
 const Home = () => {
     return (
         <div className='Home'>
-            <Header />
+            <HeroSection />
+            <CatalogAbout />
+            <Populars />
         </div>
     );
 };

@@ -1,0 +1,88 @@
+@import '../../../Scss/global/global.scss';
+
+.block {
+    width: 540px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, .1);
+    padding: 30px 0px 72px 50px;
+    position: relative;
+    margin-bottom: 40px;
+    @include lg-d {
+        margin: 0 auto 40px;
+    }
+    @include md-d {
+        width: 92%;
+        padding: 20px 0px 30px;
+    }
+}
+
+.ttl {
+    color: #43FFD2;
+    font-family: 'Oswald';
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    @include md-d {
+        font-size: 20px;
+        text-align: center;
+    }
+}
+
+.list {
+    list-style-type: disc;
+    @include md-d {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.listItem {
+    color: #FFF;
+    font-family: 'Oswald';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.72px;
+    text-transform: uppercase;
+    position: relative;
+
+    &:before {
+        content: '';
+        width: 4px;
+        height: 4px;
+        background-color: #fff;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: -12px;
+        transform: translate(0, -50%);
+    }
+}
+
+.link {
+    color: #D978AC;
+    font-family: 'Oswald';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.6px;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 10px;
+    right: 30px;
+    @include md-d {
+        position: relative;
+        display: block;
+
+        margin: 18px auto 0 42%;
+        width: 119px;
+    }
+}

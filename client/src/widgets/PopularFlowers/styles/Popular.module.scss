@@ -1,0 +1,89 @@
+.block {
+    background-color: #040A0A;
+    position: relative;
+    padding-bottom: 181px;
+}
+
+.background {
+    width: 100%;
+    position: absolute;
+    right: 0;
+}
+
+.ttl {
+    color: #FFF;
+    font-family: 'Cormorant';
+    font-size: 100px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.secondTtl {
+    margin-left: 380px;
+    margin-bottom: 10px;
+}
+
+.subttl {
+    margin-left: 380px;
+
+    color: #FFF;
+    font-family: 'Oswald';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 0.4px;
+
+    position: relative;
+
+    margin-bottom: 86px;
+}
+
+.slider {
+    overflow: hidden;
+}
+
+.btns {
+    width: 1350px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translate(-9%, -50%);
+}
+
+.sliderArrow {
+    cursor: pointer;
+    position: relative;
+}
+
+.sliderLine {
+    width: 2300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-bottom: 60px;
+    transition: .35s;
+}
+
+.link {
+    color: #D978AC;
+    font-family: 'Oswald';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.2px;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+}
