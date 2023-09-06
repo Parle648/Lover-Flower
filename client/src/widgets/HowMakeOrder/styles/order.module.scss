@@ -1,0 +1,138 @@
+@import '../../../Scss//global/global.scss';
+
+.block {
+    background-color: #040A0A;
+    height: 1000px;
+    position: relative;
+    z-index: -1;
+    height: auto;
+}
+
+.background {
+    position: absolute;
+    top: 41px;
+    @include md-d {
+        width: 249px;
+        transform: translate(-20%, 0);
+    }
+}
+
+.wrapper {
+    width: 1109px;
+    margin: -1px auto;
+    padding-top: 17px;
+    @include lg-d {
+        width: 92%;
+    }
+}
+
+.ttl,
+.subttl {
+    width: 724px;
+    color: #FFF;
+    font-family: 'Cormorant';
+    font-size: 100px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: -17px;
+    position: relative;
+    z-index: 5;
+    @include md-d {
+        width: auto;
+        text-align: center;
+        font-size: 40px;
+    }
+}
+
+.subttl {
+    margin-bottom: 63px;
+}
+
+.steps {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 537px;
+    // grid-template-columns: repeat(2, 247px);
+    // grid-gap: 38px 133px;
+    margin-left: 380px;
+    border-right: 1px solid #D978AC;
+    position: relative;
+
+    &:before {
+        content: '';
+        width: 65px;
+        height: 10px;
+        background-color: #D978AC;
+        position: absolute;
+        top: -49px;
+
+        @include md-d {
+            display: none;
+        }
+    }
+
+    @include lg-d {
+        height: auto;
+        border: 0;
+    }
+
+    @include md-d {
+        margin-left: 0;
+    }
+}
+
+.step {
+    margin-bottom: 40px;
+}
+
+.stepTtl {
+    color: #D978AC;
+    font-family: 'Oswald';
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.stepDescription {
+    width: 265px;
+    color: #FFF;
+    font-family: 'Oswald';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.56px;
+    text-transform: uppercase;
+}
+
+.firstStep {
+    @include md-d {
+        margin-left: 165px;
+    }
+}
+
+.firstDescription {
+    @include md-d {
+        width: 141px;
+    }
+}
+
+.secontStep {
+    @include md-d {
+        margin-left: 55px;
+    }
+}
+
+.secontDescription {
+    @include md-d {
+        width: 242px;
+    }
+}

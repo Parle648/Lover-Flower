@@ -30,7 +30,7 @@ const Index = () => {
     return (
         <div className={styles.block}>
             <img className={styles.background} src={background} alt="background" />
-            <div className="wrapper">
+            <div className={styles.wrapper}>
                 <h2 className={`${styles.ttl}`}>популярные</h2>
                 <h2 className={`${styles.ttl} ${styles.secondTtl}`}>букеты</h2>
                 <h2 className={styles.subttl}>Самые любимые композиции наших клиентов</h2>

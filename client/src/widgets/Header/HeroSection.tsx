@@ -29,6 +29,7 @@ const HeroSection = () => {
                     <img className={styles.trigger} src={burgerTrigger} alt="burgerTrigger" onClick={toggleMenu}/>
                     <div className={`${styles.mobileBlock} ${disabled && styles.mobileBlockActive}`}>
                         <img className={styles.cross} src={cross} alt="cross" onClick={toggleMenu}/>
+                        
                         <Link to='/'><Logo /></Link>
                         <nav className={`${styles.mobileList}`}>
                             <ul className={`${styles.navigationList} flex justify-between`}>

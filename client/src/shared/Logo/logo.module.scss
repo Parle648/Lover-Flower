@@ -1,6 +1,7 @@
 @import '../../Scss//global/global.scss';
 
 .logo {
+    width: 30px;
     margin-top: -22px;
     @include lg-d {
         width: 25px;

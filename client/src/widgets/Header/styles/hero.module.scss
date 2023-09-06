@@ -41,7 +41,7 @@
 .mobileBlock {
     display: none;
 
-    @include lg-d {
+    @include md-d {
         width: 256px;
         height: 100vh;
         margin: -12% 0px 0px -11%;

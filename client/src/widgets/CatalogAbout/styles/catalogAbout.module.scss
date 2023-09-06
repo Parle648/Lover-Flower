@@ -6,6 +6,7 @@
     background-color: #040A0A;
     @include lg-d {
         height: auto;
+        padding-bottom: 15px;
     }
 }
 
@@ -18,6 +19,11 @@
         height: auto;
         top: 0;
     }
+}
+
+.wrapper {
+    width: 1109px;
+    margin: -1px auto;
 }
 
 .second {    

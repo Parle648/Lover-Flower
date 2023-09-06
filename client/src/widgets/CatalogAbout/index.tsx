@@ -8,7 +8,7 @@ const index = () => {
     return (
         <div className={styles.container}>
             <img className={styles.background} src={document.body.clientWidth > 800 ? background : backgroundMobile} alt="background" />
-            <div className='wrapper'>
+            <div className={styles.wrapper}>
                 <h2 className={styles.ttl}>каталог</h2>
                 <p className={styles.paragraph}>
                     У нас самый большой выбор цветов, букетов, открыток и подарков.
