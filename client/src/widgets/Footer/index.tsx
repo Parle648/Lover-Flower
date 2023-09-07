@@ -1,6 +1,7 @@
 import Logo from '../../shared/Logo/Logo';
 import styles from './styles/footer.module.scss';
 import { Link } from 'react-router-dom';
+import Medias from '../Medias/index';
 
 const index = () => {
     return (
@@ -9,11 +10,11 @@ const index = () => {
                 <div className={styles.item}>
                     <Logo />
                     <h2 className={styles.greenText}>реквизиты</h2>
-                    <p className={styles.paragraph}>
+                    <p className={`${styles.paragraph} ${styles.desctopParagraph}`}>
                         ООО «Ловефлове» 220035, Республика Беларусь, г. Минск, ул. Тимирязева д. 67, комн. 112 (пом.11) УНП 193263781, р/с BY55MTBK30120001093300096372 ЗАО «МТБанк», БИК MTBKBY22 220007, г. Минск, улица Толстого
                     </p>
                 </div>
-                <div className={styles.item}>
+                <div className={`${styles.item} ${styles.desctopItems}`}>
                     <h2 className={styles.greenText}>каталог</h2>
                     <ul className={styles.list}>
                         <li className={styles.listItem}><Link to=''>популярное</Link></li>
@@ -28,7 +29,7 @@ const index = () => {
                         <li className={styles.listItem}><Link to=''>ковнерты</Link></li>
                     </ul>
                 </div>
-                <div className={styles.item}>
+                <div className={`${styles.item} ${styles.desctopItems}`}>
                     <h2 className={styles.greenText}>букет</h2>
                     <ul className={styles.list}>
                         <li className={styles.listItem}><Link to=''>для девушки</Link></li>
@@ -50,19 +51,15 @@ const index = () => {
                    <Link className={styles.greenLink} to='/'>для корпоративных клиентов</Link>
                 </div>
                 <div className={styles.item}>
-                    <h2 className={styles.greenText}>каталог</h2>
-                    <ul className={styles.list}>
-                        <li className={styles.listItem}><Link to=''>l</Link></li>
-                        <li className={styles.listItem}><Link to=''>l</Link></li>
-                        <li className={styles.listItem}><Link to=''>l</Link></li>
-                        <li className={styles.listItem}><Link to=''>l</Link></li>
-                        <li className={styles.listItem}><Link to=''>l</Link></li>
-                        <li className={styles.listItem}><Link to=''>l</Link></li>
-                        <li className={styles.listItem}><Link to=''>l</Link></li>
-                        <li className={styles.listItem}><Link to=''>l</Link></li>
-                        <li className={styles.listItem}><Link to=''>l</Link></li>
-                        <li className={styles.listItem}><Link to=''>l</Link></li>
-                    </ul>
+                <a className={`uppercase Oswald400 green ${styles.mail}`} href="#!">zakaz@loverflower.by</a>
+                    <h2 className={`${styles.delivery} Oswald300 gray`}>Доставка 24/7 по договоренности с оператором</h2>
+                    <h2 className={`${styles.greenLink} Oswald400 green`}>ул. Тимирязева 67</h2>
+                    <h2 className={`${styles.time} Oswald300 gray`}>10:00 до 21:00<br/> без выходных</h2>
+                    <a className={`${styles.greenLink} Oswald400 green`} href="#!">+375 (29) 113-69-69</a>
+                    <Medias style={styles.media}/>
+                    <p className={styles.paragraph}>
+                        ООО «Ловефлове» 220035, Республика Беларусь, г. Минск, ул. Тимирязева д. 67, комн. 112 (пом.11) УНП 193263781, р/с BY55MTBK30120001093300096372 ЗАО «МТБанк», БИК MTBKBY22 220007, г. Минск, улица Толстого
+                    </p>
                 </div>
             </div>
         </footer>

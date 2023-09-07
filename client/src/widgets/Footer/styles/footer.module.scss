@@ -1,6 +1,14 @@
+@import '../../../Scss/global/global.scss';
+
 .footer {
+    height: 337px;
     background-color: #000;
     padding-top: 30px;
+
+    @include md-d {
+        height: auto;
+        padding-bottom: 35px;
+    }
 }
 
 .wrapper {
@@ -9,11 +17,27 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    padding-top: 0;
+
+    @include lg-d {
+        width: 92%;
+    }
+
+    @include md-d {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .item {
     display: flex;
     flex-direction: column;
+}
+
+.desctopItems {
+    @include lg-d {
+        display: none;
+    }
 }
 
 .greenText,
@@ -27,6 +51,10 @@
     letter-spacing: 0.56px;
     text-transform: uppercase;
     margin-bottom: 10px;
+
+    @include md-d {
+        text-align: center;
+    }
 }
 
 .paragraph {
@@ -39,6 +67,19 @@
     line-height: normal;
     letter-spacing: 0.48px;
     text-transform: uppercase;
+    display: none;
+
+    @include md-d {
+        display: block;
+        text-align: center;
+    }
+}
+
+.desctopParagraph {
+    display: block;
+    @include md-d {
+        display: none;
+    }
 }
 
 
@@ -52,6 +93,10 @@
     line-height: normal;
     letter-spacing: 0.48px;
     text-transform: uppercase;
+
+    &:hover {
+        color: #43FFD2;
+    }
 }
 
 .greenLink {
@@ -59,5 +104,104 @@
     
     &:hover {
         color: #fff;
+    }
+}
+
+.mail {
+    @include md-d {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+}
+
+.media {
+    flex-direction: row;
+    width: 109px;
+    height: 60px;
+    padding: 0;
+    margin-bottom: 0;
+
+    @include md-d {
+        margin: 0 auto;
+    }
+}
+
+.delivery {
+    font-size: 14.2px;
+    margin-top: -5px;
+    margin-bottom: 20px;
+
+    @include lg-d {
+        margin-bottom: 13px;
+        line-height: 17px;
+    }
+
+    @include md-d {
+        text-align: center;
+    }
+}
+
+.street {
+    font-size: 19.3px;
+    margin-bottom: 19px;
+    margin-bottom: 1px;
+
+    @include lg-d {
+        font-size: 19.3px;
+        margin-bottom: -2px;
+        margin-top: -7px;
+    }
+
+    @include md-d {
+        text-align: center;
+    }
+}
+
+.policy {
+    display: block;
+    color: #555;
+    font-size: 10px;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.4px;
+
+    @include md-d {
+        text-align: center;
+    }
+}
+
+.time {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-size: 10px;
+
+    @include lg-d {
+        margin-bottom: 15px;
+    }
+
+    @include md-d {
+        text-align: center;
+    }
+}
+
+.number {
+    color: #43FFD2;
+    font-size: 16px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+
+    @include lg-d {
+        margin-top: 13px;
+        display: block;
+    }
+
+    @include md-d {
+        text-align: center;
     }
 }

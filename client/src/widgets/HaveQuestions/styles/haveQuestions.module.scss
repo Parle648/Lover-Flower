@@ -1,0 +1,134 @@
+@import '../../../Scss/global/global.scss';
+
+.block {
+    width: 100%;
+    height: auto;
+    padding-bottom: 52px;
+    background-color: #0F2222;
+    position: relative;
+}
+
+.background {
+    position: absolute;
+    left: 0;
+    top: -30%;
+    
+    @include lg-d {
+        display: none;
+    }
+}
+
+.backgroundMobile {
+    display: none;
+    position: absolute;
+
+    @include lg-d {
+        display: block;
+        top: -100px;
+    }
+}
+
+.wrapper {
+    width: 1110px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @include lg-d {
+        width: 92%;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+// .ttls {
+
+// }
+
+.ttl {
+    position: relative;
+    color: #FFF;
+    font-family: 'Cormorant';
+    font-size: 100px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    @include lg-d {
+        font-size: 60px;
+    }
+
+    @include md-d {
+        font-size: 40px;
+    }
+}
+
+.secondTtl {
+    margin-left: 80px;
+}
+
+.form {
+    padding-top: 83px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.description {
+    width: 255px;
+    margin-bottom: 30px;
+    align-self: end;
+
+    color: #FFF;
+    font-family: 'Oswald';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.56px;
+    text-transform: uppercase;
+
+    padding-top: 53px;
+    border-top: 1px solid #43FFD2;
+}
+
+.input {
+    width: 445px;
+    margin-bottom: 10px;
+
+    @include lg-d {
+        width: 92%;
+    }
+
+    @include md-d {
+        width: 300px;
+    }
+}
+
+.textField {
+    max-height: 120px;
+}
+
+.policy {
+    width: 342px;
+    margin-top: 10px;
+
+    color: #FFF;
+    font-family: 'Roboto';
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.2px;
+
+    @include md-d {
+        width: 248px;
+    }
+}
+
+.link {
+    color: #D978AC;
+}

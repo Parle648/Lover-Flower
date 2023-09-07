@@ -85,6 +85,21 @@
     }
 }
 
+.greenInput {
+    border: 1px solid #43FFD2;
+    background-color: transparent;
+    color: #395959;
+    font-family: 'Oswald';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.56px;
+    text-transform: uppercase;
+    padding: 20px;
+    outline: none;
+}
+
 $brackpoints: (
     sm: 500px,
     md: 750px,

@@ -39,8 +39,6 @@ const HeroSection = () => {
                                 <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><Link to='/aboutUs'>О нас</Link></li>
                                 <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><Link to='/contacts'>Контакты</Link></li>
                                 <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><Link to='/questions'>FAQ</Link></li>
-                                <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><Link to=''></Link> Каталоssг</li>
-                                <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><Link to=''></Link> Каталоssг</li>
                             </ul>
                         </nav>
 

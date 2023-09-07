@@ -1,0 +1,80 @@
+@import '../../../Scss/global/global.scss';
+
+.block {
+    height: 621px;
+    background-color: #040A0A;
+    position: relative;
+    overflow: hidden;
+
+    @include md-d {
+        height: auto;
+        padding-bottom: 100px;
+    }
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+
+    @include md-d {
+        display: none;
+    }
+}
+
+.backgroundMobile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    display: none;
+
+    @include md-d {
+        display: block;
+    }
+}
+
+.wrapper {
+    width: 1110px;
+    margin: 0 auto;
+    padding-top: 261px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+
+    @include lg-d {
+        width: 92%;
+        padding-top: 67px;
+        flex-direction: column-reverse;
+    }
+}
+
+.imgs {
+    width: 760px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include md-d {
+        width: 92%;
+        display: grid;
+        grid-gap: 6px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.media {
+    flex-direction: row;
+    width: 160px;
+    height: 60px;
+    background-color: transparent;   
+    margin-bottom: 0; 
+    padding: 0;
+    align-items: flex-end;
+
+    @include lg-d {
+        margin-bottom: 61px;
+    }
+}
