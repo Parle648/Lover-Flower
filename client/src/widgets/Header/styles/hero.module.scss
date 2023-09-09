@@ -24,10 +24,21 @@
     left: 50%;
     transform: translate(-50%, 0);
     position: absolute;
+    transition: .35s;
 
     @include xl-d {
         width: 92%;
     }
+}
+
+.scrollHeader {
+    width: 100%;
+    position: fixed;
+    background-color: #000;
+    height: 60px;
+    z-index: 10;
+    padding: 30px 12% 50px;
+    margin-top: -25px;
 }
 
 .logo {
@@ -44,7 +55,7 @@
     @include md-d {
         width: 256px;
         height: 100vh;
-        margin: -12% 0px 0px -11%;
+        margin: -12% 0px 0px -20%;
         padding: 27px;
         background-color: #000;
         display: block;
@@ -81,6 +92,19 @@
     opacity: 0;
 }
 
+.headerText {
+    display: none;
+    margin-left: -130px;
+    margin-top: -15px;
+    align-self: baseline;
+}
+
+.scrolledText {
+    @include lg-d {
+        display: block;
+    }
+}
+
 .nav {
     display: flex;
 
@@ -108,6 +132,10 @@
     &:hover {
         color: rgba(67, 255, 210, 1)
     }
+}
+
+.scrolledNumber {
+    display: none;
 }
 
 .delivery {
@@ -165,7 +193,7 @@
 
     @include lg-d {
         margin-top: 13px;
-        display: block;
+        display: none;
     }
 }
 
@@ -178,6 +206,10 @@
     @include lg-d {
         display: none;
     }
+}
+
+.scrolledContactBlock {
+    display: none;
 }
 
 .btnTtl {
