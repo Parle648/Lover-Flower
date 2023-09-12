@@ -8,9 +8,13 @@ import SpecialOccassion from '../../widgets/SpecialOccassion/index';
 import Insta from '../../widgets/InstaBlock/index';
 import Footer from '../../widgets/Footer/index';
 
+import OrderCall from '../../features/OrderCall/index.tsx';
+
 const Home = () => {
+
     return (
         <div className='Home'>
+            <OrderCall />
             <HeroSection />
             <CatalogAbout />
             <Populars />

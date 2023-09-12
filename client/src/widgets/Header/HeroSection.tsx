@@ -9,6 +9,7 @@ import backgroundMobile from '../../img/heromobile.png';
 import text from '../../img/header-text.png';
 import styles from './styles/hero.module.scss';
 import '../../Scss/styles.scss';
+import Busket from '../../features/Basket/index.tsx';
 
 const HeroSection = () => {
     const [disabled, setDisabled] = React.useState(false);
@@ -84,6 +85,7 @@ const HeroSection = () => {
                     <h2 className={`${styles.time} Oswald300 gray`}>10:00 до 21:00<br/> без выходных</h2>
                     <Medias />
                     <a className={`${styles.number} Oswald400 green`} href="#!">+375 (29) 113-69-69</a>
+                    <Busket />
                 </div>
             </header>
             <h2 className={`${styles.btnTtl} Oswald400`}>Создаём для тех, кто ценит свежесть и изящество цветка</h2>
