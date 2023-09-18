@@ -10,6 +10,7 @@ import cross from '../../img/cross.svg';
 import burgerTrigger from '../../img/burger.svg';
 
 import styles from './style/TopHeader.module.scss';
+import Search from '../../features/Search/Search';
 
 
 const TopHeader = () => {
@@ -63,6 +64,9 @@ const TopHeader = () => {
                     <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><a href=''></a> Каталоssг</li>
                 </ul>
             </nav>
+
+            <Search />
+
             <a className={`${styles.number} Oswald400 green`} href="#!">+375 (29) 113-69-69</a>
             <Busket />
         </div>

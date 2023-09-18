@@ -7,6 +7,7 @@ import Busket from '../../features/Basket/index.tsx';
 
 import burgerTrigger from '../../img/burger.svg';
 import cross from '../../img/cross.svg';
+import Search from '../../features/Search/Search';
 
 const Index = () => {
     const [disabled, setDisabled] = React.useState(false);
@@ -60,6 +61,8 @@ const Index = () => {
                     <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><a href=''></a> Каталоssг</li>
                 </ul>
             </nav>
+
+            <Search />
 
             <div className={`${styles.contactBlock} `}> 
                 <a className='uppercase Oswald400 green' href="#!">zakaz@loverflower.by</a>
