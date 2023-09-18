@@ -41,12 +41,12 @@ const HeroSection = () => {
                         <Link to='/'><Logo /></Link>
                         <nav className={`${styles.mobileList}`}>
                             <ul className={`${styles.navigationList} flex justify-between`}>
-                                <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><Link to='/'>Главная</Link></li>
-                                <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><Link to='/catalog'>Каталог</Link></li>
-                                <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><Link to='/delivery'>Доставка и оплата</Link></li>
-                                <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><Link to='/aboutUs'>О нас</Link></li>
-                                <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><Link to='/contacts'>Контакты</Link></li>
-                                <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><Link to='/questions'>FAQ</Link></li>
+                                <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><a href='/'>Главная</a></li>
+                                <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><a href='../../pages/Catalog/Catalog.tsx'>Каталог</a></li>
+                                <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><a href='/delivery'>Доставка и оплата</a></li>
+                                <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><a href='/aboutUs'>О нас</a></li>
+                                <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><a href='/contacts'>Контакты</a></li>
+                                <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><a href='/questions'>FAQ</a></li>
                             </ul>
                         </nav>
 
@@ -67,12 +67,12 @@ const HeroSection = () => {
 
                 <nav className={`${styles.nav}`}>
                     <ul className={`${styles.navigationList} flex justify-between`}>
-                        <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><Link to='/catalog'>Каталог</Link></li>
-                        <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><Link to='/delivery'>Доставка и оплата</Link></li>
-                        <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><Link to='/aboutUs'>О нас</Link></li>
-                        <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><Link to='/contacts'>Контакты</Link></li>
-                        <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><Link to='/questions'>FAQ</Link></li>
-                        <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><Link to=''></Link> Каталоssг</li>
+                        <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><a href='/catalog'>Каталог</a></li>
+                        <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><a href='/delivery'>Доставка и оплата</a></li>
+                        <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><a href='/aboutUs'>О нас</a></li>
+                        <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><a href='/contacts'>Контакты</a></li>
+                        <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><a href='/questions'>FAQ</a></li>
+                        <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><a href=''></a> Каталоssг</li>
                     </ul>
                 </nav>
 

@@ -7,10 +7,10 @@ const BusketSlice = createSlice({
     },
     reducers: {
         increment(state) {
-            state.value++
+            state.value++;
         },
         decrement(state) {
-            state.value--
+            state.value--;
         },
     },
 })

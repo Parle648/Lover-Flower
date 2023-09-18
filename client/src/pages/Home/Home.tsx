@@ -1,5 +1,5 @@
 import React from 'react';
-import HeroSection from '../../widgets/Header/HeroSection';
+import HeroSection from '../../widgets/HeroSection/HeroSection';
 import CatalogAbout from '../../widgets/CatalogAbout/index';
 import Populars from '../../widgets/PopularFlowers/index';
 import HowMakeOrder from '../../widgets/HowMakeOrder/HowMakeOrder';

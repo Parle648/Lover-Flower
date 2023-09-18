@@ -1,0 +1,159 @@
+@import '../../../Scss/global/global.scss';
+
+.header {
+    width: 100%;
+    background-color: #000;
+    padding: 20px 11.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: fixed;
+    top: 0;
+    z-index: 10;
+
+    @include lg-d {
+        padding: 20px 20px;
+    }
+}
+
+.text {
+    display: none;
+
+    @include md-d {
+        display: block;
+    }
+}
+
+.nav {
+    display: flex;
+
+    @include md-d {
+        display: none;
+    }
+}
+
+.navigationList {
+    width: 612px;
+    margin-left: -77px;
+
+    @include lg-d {
+        width: 476px;
+        margin-left: 0px;
+    }
+
+    @include md-d {
+        width: auto;
+        margin: 0;
+        flex-direction: column;
+    }
+}
+
+.link {
+    letter-spacing: 0.56px;
+    margin-bottom: 12px;
+    display: block;
+
+    &:hover {
+        color: rgba(67, 255, 210, 1)
+    }
+}
+
+.number {
+    color: #43FFD2;
+    font-size: 16px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+
+    @include lg-d {
+        margin-top: 13px;
+        display: none;
+    }
+}
+
+.mobileBlock {
+    display: none;
+
+    @include md-d {
+        width: 256px;
+        height: 100vh;
+        margin: -12% 0px 0px -20%;
+        padding: 27px;
+        background-color: #000;
+        display: block;
+        position: relative;
+        left: -100%;
+        z-index: 7;
+        transition: .35s;
+    }
+}
+
+.mobileList {
+    margin-bottom: 22px;
+}
+.trigger {
+    width: 20px;
+    display: none;
+    @include lg-d {
+        display: block;
+    }
+}
+
+.mobileBlockActive {
+    left: 0;
+}
+
+.cross {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.triggerActive {
+    position: absolute;
+    opacity: 0;
+}
+
+.headerText {
+    display: none;
+    margin-left: -130px;
+    margin-top: -15px;
+    align-self: baseline;
+}
+
+.mobileBlock {
+    display: none;
+
+    @include md-d {
+        width: 256px;
+        height: 100vh;
+        margin: -12% 0px 0px -20%;
+        padding: 27px;
+        background-color: #000;
+        display: block;
+        position: absolute;
+        left: -100%;
+        z-index: 7;
+        transition: .35s;
+    }
+}
+
+.mobileBlockActive {
+    left: 20%;
+}
+
+.cross {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.triggerActive {
+    position: absolute;
+    opacity: 0;
+}
