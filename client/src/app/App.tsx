@@ -13,6 +13,7 @@ import FAQPage from '../pages/FAQPage/FAQPage';
 import { Provider } from 'react-redux';
 import store from '../redux/store/index';
 import '../Scss/styles.scss';
+import NotFound from '../pages/NotFound/NotFound.tsx';
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />}></Route>
             <Route path='/catalog' element={<Catalog />}></Route>
-            <Route path='/:id' element={<ProductPage />}></Route>
+            <Route path='/catalog/:id' element={<ProductPage />}></Route>
             <Route path='/order' element={<OrderPage />}></Route>
             <Route path='/paysuccess' element={<PaySuccess />}></Route>
             <Route path='/paywrong' element={<PayWrong />}></Route>
@@ -30,6 +31,7 @@ function App() {
             <Route path='/aboutUs' element={<AboutUs />}></Route>
             <Route path='/contacts' element={<ContactsPage />}></Route>
             <Route path='/questions' element={<FAQPage />}></Route>
+            <Route path='/*' element={<NotFound />}></Route>
           </Routes>
         </BrowserRouter>
       </div>

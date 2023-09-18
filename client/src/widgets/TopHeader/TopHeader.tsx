@@ -65,7 +65,7 @@ const TopHeader = () => {
                 </ul>
             </nav>
 
-            <Search />
+            {document.body.clientWidth > 800 && <Search />}
 
             <a className={`${styles.number} Oswald400 green`} href="#!">+375 (29) 113-69-69</a>
             <Busket />
