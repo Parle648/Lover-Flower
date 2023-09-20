@@ -1,0 +1,14 @@
+.block {
+    width: 725px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: aqua;
+
+    position: relative;
+    margin-top: -1080px;
+    margin-left: 35%;
+
+    z-index: 10;
+}

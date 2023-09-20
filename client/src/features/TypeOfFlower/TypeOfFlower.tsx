@@ -2,10 +2,19 @@ import React from 'react';
 import styles from './styles/FlowerType.module.scss';
 import getProducts from './api/getRequest.ts';
 
+import { update } from '../../redux/slices/Products';
+import { useDispatch } from 'react-redux';
+
 const TypeOfFlower = () => {
-    function findExaxt() {
-        console.log(getProducts());
+
+    const dispatch = useDispatch();
+
+    function FindExaxts(event: any) {
+        const string = event?.target.innerText;
+        const promise = getProducts(string);
+        promise.then((res: Promise<[]>) => dispatch(update(res)))
     }
+
     return (
         <div className={styles.block}>
             <h2 className={styles.ttl}>каталог</h2>
@@ -15,57 +24,57 @@ const TypeOfFlower = () => {
             </p>
 
             <div className={styles.topics}>
-                <div className={styles.topic} onClick={findExaxt}>
+                <button className={styles.topic} onClick={FindExaxts}>
                     Букеты из гипсофил
-                </div>
-                <div className={styles.topic} onClick={findExaxt}>
+                </button>
+                <button className={styles.topic} onClick={FindExaxts}>
                     Букеты из ромашек
-                </div>
-                <div className={styles.topic} onClick={findExaxt}>
+                </button>
+                <button className={styles.topic} onClick={FindExaxts}>
                     Букеты из хризантем
-                </div>
-                <div className={styles.topic} onClick={findExaxt}>
+                </button>
+                <button className={styles.topic} onClick={FindExaxts}>
                     Комнатные цветы в горшках
-                </div>
-                <div className={styles.topic} onClick={findExaxt}>
+                </button>
+                <button className={styles.topic} onClick={FindExaxts}>
                     Монобукеты
-                </div>
-                <div className={styles.topic} onClick={findExaxt}>
+                </button>
+                <button className={styles.topic} onClick={FindExaxts}>
                     Сборные букеты
-                </div>
-                <div className={styles.topic} onClick={findExaxt}>
+                </button>
+                <button className={styles.topic} onClick={FindExaxts}>
                     Букет на праздник
-                </div>
-                <div className={styles.topic} onClick={findExaxt}>
+                </button>
+                <button className={styles.topic} onClick={FindExaxts}>
                     Композиции из цветов
-                </div>
-                <div className={styles.topic} onClick={findExaxt}>
+                </button>
+                <button className={styles.topic} onClick={FindExaxts}>
                     Конверты
-                </div>
-                <div className={styles.topic} onClick={findExaxt}>
+                </button>
+                <button className={styles.topic} onClick={FindExaxts}>
                     Открытки
-                </div>
-                <div className={styles.topic} onClick={findExaxt}>
+                </button>
+                <button className={styles.topic} onClick={FindExaxts}>
                     Подарки
-                </div>
-                <div className={styles.topic} onClick={findExaxt}>
+                </button>
+                <button className={styles.topic} onClick={FindExaxts}>
                     Букеты из сухоцветов
-                </div>
-                <div className={styles.topic} onClick={findExaxt}>
+                </button>
+                <button className={styles.topic} onClick={FindExaxts}>
                     Шары
-                </div>
-                <div className={styles.topic} onClick={findExaxt}>
+                </button>
+                <button className={styles.topic} onClick={FindExaxts}>
                     Популярное
-                </div>
-                <div className={styles.topic} onClick={findExaxt}>
+                </button>
+                <button className={styles.topic} onClick={FindExaxts}>
                     Букеты роз
-                </div>
-                <div className={styles.topic} onClick={findExaxt}>
+                </button>
+                <button className={styles.topic} onClick={FindExaxts}>
                     Цветы на похороны
-                </div>
-                <div className={styles.topic} onClick={findExaxt}>
+                </button>
+                <button className={styles.topic} onClick={FindExaxts}>
                     Упаковка подарков
-                </div>
+                </button>
             </div>
         </div>
     );

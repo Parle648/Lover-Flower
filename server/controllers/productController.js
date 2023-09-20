@@ -11,11 +11,20 @@ class productController {
             return json(`${err}`)
         }
     } 
+    
+    async getSortedProducts(req, res) {
+        try {
+            const {string} = req.params; 
+            const products = await Products.findAll();
+            return res.json(products.filter(obj => obj.categories.includes(string.slice(1))));
+        } catch(err) {
+            return json(`${err}`)
+        }
+    } 
 
     async getProduct(req, res) {
         try {
             const {id} = req.params;
-            console.log(id);
             const prodArray = await Products.findByPk(id);
             return res.json(prodArray);
         } catch(err) {
