@@ -1,41 +1,53 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-
+// Elements
 import styles from './styles/ProdList.module.scss';
-
 import SliderCart from '../../entities/SliderCart/index.tsx';
-
-import l from '../../img/inst1.png'
-
+import background from '../../img/inst1.png';
+// Hooks, Functions
 import { getAllProducts } from './api/api.ts'; 
-import { update } from '../../redux/slices/Products';
-import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 type CartType = {
     img: string,
     title: string,
     cost: string,
-}
+};
+
+type State = {
+    products: {
+        value: [],
+    }
+};
 
 const ProductsList = () => {
-    let prodList = useSelector((state: any) => state.products.value.payload)
-    const dispatch = useDispatch();
+    let choosedTypes = useSelector((state: State) => state.products.value);
+    const [allProducts, setAllProducts] = React.useState<CartType[]>([]);
 
-    console.log(prodList);
-    
-
-    if (prodList === undefined) {
-        const promise = getAllProducts();
-        promise.then((res: {}) => dispatch(update(res)))
-    }
+    React.useEffect(() => {
+        try {
+            getAllProducts().then((res: any) => {
+                setAllProducts(res);
+            })
+        } catch (error) {
+            console.error(error);
+        }
+    }, [])
 
     return (
         <div className={styles.block}>
-            {prodList && prodList.map((product: CartType) => {
+            { choosedTypes.length !== 0 
+                ? choosedTypes.map((product: CartType) => {
                 return (
-                    <SliderCart img={l} ttl={product.title} cost={product.cost}/>
-                )
-            })}
+                    <SliderCart img={background} ttl={product.title} cost={product.cost}/>
+                    )
+                }) 
+
+                : allProducts.map((elem) => {
+                    return (
+                        <SliderCart img={background} ttl={elem.title} cost={elem.cost}/>
+                    )
+                }) 
+            }
         </div>
     );
 };

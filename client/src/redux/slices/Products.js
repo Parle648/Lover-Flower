@@ -6,13 +6,21 @@ const Products = createSlice({
         value: [],
     },
     reducers: {
+        addProducts(state, arr) {
+            const res = state.value.concat(arr.payload);
+            state.value = res
+        },
+        deleteProducts(state, arr) {
+            arr.payload.forEach(element => {
+                state.value.pop(element);
+            });
+        },
         update(state, arr) {
-            console.log(arr);
             state.value = arr;
         }
     },
 })
 
-export const {update} = Products.actions
+export const {addProducts, deleteProducts, update} = Products.actions
 
 export default Products.reducer;

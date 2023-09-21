@@ -2,17 +2,31 @@ import React from 'react';
 import styles from './styles/FlowerType.module.scss';
 import getProducts from './api/getRequest.ts';
 
-import { update } from '../../redux/slices/Products';
+import { addProducts, deleteProducts } from '../../redux/slices/Products';
 import { useDispatch } from 'react-redux';
 
 const TypeOfFlower = () => {
-
     const dispatch = useDispatch();
+    const buttons: string[] = [
+        'Букеты из гипсофил', 'Букеты из ромашек', 'Букеты из хризантем','Комнатные цветы в горшках','Монобукеты','Сборные букеты','Букет на праздник',
+        'Композиции из цветов','Конверты','Открытки','Подарки','Букеты из сухоцветов','Шары','Популярное','Букеты роз','Цветы на похороны','Упаковка подарков',
+    ];
 
-    function FindExaxts(event: any) {
-        const string = event?.target.innerText;
-        const promise = getProducts(string);
-        promise.then((res: Promise<[]>) => dispatch(update(res)))
+    function FindExaxts(event: React.MouseEvent<HTMLButtonElement>) {
+        const type = event?.currentTarget.innerText;
+        const typedProducts = getProducts(type);
+       
+        if (event?.currentTarget.classList.contains(`${styles.active}`)) {
+            typedProducts.then((res: []) => {
+                dispatch(deleteProducts(res))
+            })
+        } else {
+            typedProducts.then((res: []) => {
+                dispatch(addProducts(res))
+            })
+        }
+       
+        event?.currentTarget.classList.toggle(styles.active);
     }
 
     return (
@@ -22,59 +36,14 @@ const TypeOfFlower = () => {
             <p className={styles.paragraph}>
                 В нашем магазине самый большой выбор букетов для любых событий:
             </p>
-
             <div className={styles.topics}>
-                <button className={styles.topic} onClick={FindExaxts}>
-                    Букеты из гипсофил
-                </button>
-                <button className={styles.topic} onClick={FindExaxts}>
-                    Букеты из ромашек
-                </button>
-                <button className={styles.topic} onClick={FindExaxts}>
-                    Букеты из хризантем
-                </button>
-                <button className={styles.topic} onClick={FindExaxts}>
-                    Комнатные цветы в горшках
-                </button>
-                <button className={styles.topic} onClick={FindExaxts}>
-                    Монобукеты
-                </button>
-                <button className={styles.topic} onClick={FindExaxts}>
-                    Сборные букеты
-                </button>
-                <button className={styles.topic} onClick={FindExaxts}>
-                    Букет на праздник
-                </button>
-                <button className={styles.topic} onClick={FindExaxts}>
-                    Композиции из цветов
-                </button>
-                <button className={styles.topic} onClick={FindExaxts}>
-                    Конверты
-                </button>
-                <button className={styles.topic} onClick={FindExaxts}>
-                    Открытки
-                </button>
-                <button className={styles.topic} onClick={FindExaxts}>
-                    Подарки
-                </button>
-                <button className={styles.topic} onClick={FindExaxts}>
-                    Букеты из сухоцветов
-                </button>
-                <button className={styles.topic} onClick={FindExaxts}>
-                    Шары
-                </button>
-                <button className={styles.topic} onClick={FindExaxts}>
-                    Популярное
-                </button>
-                <button className={styles.topic} onClick={FindExaxts}>
-                    Букеты роз
-                </button>
-                <button className={styles.topic} onClick={FindExaxts}>
-                    Цветы на похороны
-                </button>
-                <button className={styles.topic} onClick={FindExaxts}>
-                    Упаковка подарков
-                </button>
+                {buttons.map(string => {
+                    return (
+                        <button className={styles.topic} onClick={FindExaxts}>
+                            {string}
+                        </button>
+                    );
+                })}
             </div>
         </div>
     );
