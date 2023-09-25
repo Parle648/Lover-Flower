@@ -15,7 +15,7 @@ const Products = createSlice({
                 state.value.pop(element);
             });
         },
-        update(state, arr) {
+        update (state, arr) {
             state.value = arr;
         }
     },

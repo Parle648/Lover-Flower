@@ -3,6 +3,7 @@ import styles from './styles/FlowerType.module.scss';
 import getProducts from './api/getRequest.ts';
 
 import { addProducts, deleteProducts } from '../../redux/slices/Products';
+import { pushType, popType } from '../../redux/slices/ProductTypes';
 import { useDispatch } from 'react-redux';
 
 const TypeOfFlower = () => {
@@ -19,10 +20,12 @@ const TypeOfFlower = () => {
         if (event?.currentTarget.classList.contains(`${styles.active}`)) {
             typedProducts.then((res: []) => {
                 dispatch(deleteProducts(res))
+                dispatch(popType(type))
             })
         } else {
             typedProducts.then((res: []) => {
                 dispatch(addProducts(res))
+                dispatch(pushType(type))
             })
         }
        

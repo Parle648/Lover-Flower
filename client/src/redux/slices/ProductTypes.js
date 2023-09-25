@@ -1,20 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const ProductTypeSlice = createSlice({
-    name: 'ProductTypeSlice',
+const prodTypes = createSlice({
+    name: 'prodTypes',
     initialState: {
         value: [],
     },
     reducers: {
-        pushType(state, string) {
-            state.value.push(string)
+        pushType (state, type) {
+            state.value = state.value.concat(type.payload);
         },
-        popType(state, string) {
-            state.value.pop(string)
-        }
+        popType (state, type) {
+            state.value.pop(type);
+        },
     }
 })
 
-export const {pushType, popType} = ProductTypeSlice.actions;
+export const {pushType, popType} = prodTypes.actions;
 
-export default ProductTypeSlice.reducer;
+export default prodTypes.reducer;
