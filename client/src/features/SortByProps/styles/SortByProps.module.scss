@@ -1,0 +1,82 @@
+.block {
+    width: 255px;
+    height: auto;
+    flex-shrink: 0;
+    padding: 20px 16px;
+
+    position: absolute;
+    z-index: 10;
+    top: 770px;
+    left: 165px;
+
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.30);
+    backdrop-filter: blur(10px);
+}
+
+.title {
+    margin-bottom: 8px;
+    color: #43FFD2;
+    font-family: 'Oswald';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.56px;
+    text-transform: uppercase;
+}
+
+.inputs {
+    max-height: 200px;
+    overflow: auto;
+}
+
+.inputs::-webkit-scrollbar {
+    width: 1px;
+    height: 40px;
+    border-radius: 1px;
+} 
+  
+.inputs::-webkit-scrollbar-thumb {
+    background-color: #43FFD2;
+}
+
+.label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 11px;
+}
+
+.fakeCheckbox {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    margin-right: 6px;
+    
+    border-radius: 2px;
+    border: 0.5px solid #FFF;
+    background-color: transparent;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.active {
+    background-color: #43FFD2;
+}
+
+.inputText {
+    color: #FFF;
+    font-family: 'Oswald';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 0.48px;
+    text-transform: uppercase;
+}
+
+.checkbox {
+    display: none;
+}

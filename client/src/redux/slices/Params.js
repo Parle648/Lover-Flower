@@ -3,11 +3,19 @@ import { createSlice } from "@reduxjs/toolkit";
 const Params = createSlice({
     name: 'Params',
     initialState: {
-        value: [],
+        value: {
+            light: [],
+            cost: [],
+            format: [],
+            Cost: [],
+            flowers: [],
+        },
     },
     reducers: {
-        pushParam (state, params) {
-            state.value.push(params)
+        pushParam (state, {payload}) {
+            const name = Object.keys(payload)[0]
+            console.log(payload);
+            state.value[name].push(payload[name])
         },
         popParam (state, params) {
             state.value.pop(params)
