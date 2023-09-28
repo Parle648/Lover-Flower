@@ -1,8 +1,10 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { pushParam, popParam } from '../../redux/slices/Params';
 import styles from './styles/SortByProps.module.scss';
+
+import getCurrentProducts from './api/getProducts.js';
 
 
 const SortByProps = () => {
@@ -26,20 +28,33 @@ const SortByProps = () => {
 
     };
 
+    const types = useSelector((state: any) => state.prodTypes);
+    const sortBy = useSelector((state: any) => state.sortby);
+    const props = useSelector((state: any) => state.Params);
+
     const changeHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
         event?.currentTarget.previousElementSibling?.classList.toggle(styles.active);
         const name = event?.currentTarget.name;
-        const value = event?.currentTarget.nextElementSibling?.innerHTML;
 
-        console.log(event?.currentTarget.innerText);
-        
-        
-
-        if (event?.currentTarget.previousElementSibling?.classList !== styles.active) {
-            dispatch(pushParam({
+        if (!event?.currentTarget.previousElementSibling?.classList.contains(styles.active)) {
+            dispatch(popParam({
                 [name]: event?.currentTarget.nextElementSibling?.innerHTML,
             }))
+        } else {
+            dispatch(pushParam({
+                [name]: `${event?.currentTarget.nextElementSibling?.innerHTML}`,
+            }))
         }
+
+        const obj = {
+            types, 
+            sortBy, 
+            props
+        }
+
+        const responce = getCurrentProducts(obj);
+        console.log(responce);
+        
     };
 
     return (

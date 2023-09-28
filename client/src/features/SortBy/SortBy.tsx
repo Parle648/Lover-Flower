@@ -3,9 +3,7 @@ import styles from './styles/SortBy.module.scss';
 import arrow from '../../img/arrow-sort-by.svg';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { update } from '../../redux/slices/Products';
-import {increased, decreased} from './api/api';
-
+import { updateValue } from '../../redux/slices/SortBy'; 
 
 const SortBy = () => {
     const dispatch = useDispatch();
@@ -14,19 +12,7 @@ const SortBy = () => {
     let [products, setProducts] = React.useState([]);
 
     function sortBy (event: React.MouseEvent<HTMLButtonElement>) {
-        if (event.currentTarget.innerText === 'ПО ВОЗРАСТАНИЮ') {
-            increased(types, []).then((res: any) => {
-                setProducts(res);
-                dispatch(update(products))
-            });
-        } else {
-            const decr = decreased(types, params)
-            console.log(decr)
-            decr.then((res: any) => {
-                setProducts(res);
-                dispatch(update(products))
-            });
-        }
+        dispatch(updateValue(event.currentTarget.innerText))
     };
 
     return (

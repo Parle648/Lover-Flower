@@ -3,6 +3,7 @@ import BusketSlice from '../slices/Busket.js';
 import Products from '../slices/Products.js';
 import ProductTypes from '../slices/ProductTypes.js';
 import Params from '../slices/Params.js';
+import sortby from '../slices/SortBy';
 
 export default configureStore({
     reducer: {
@@ -10,5 +11,6 @@ export default configureStore({
         products: Products,
         prodTypes: ProductTypes,
         Params: Params,
+        sortby: sortby,
     }
 })

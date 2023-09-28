@@ -14,11 +14,11 @@ const Params = createSlice({
     reducers: {
         pushParam (state, {payload}) {
             const name = Object.keys(payload)[0]
-            console.log(payload);
             state.value[name].push(payload[name])
         },
-        popParam (state, params) {
-            state.value.pop(params)
+        popParam (state, {payload}) {
+            const name = Object.keys(payload)[0]
+            state.value[name].pop(payload[name])
         }
     }
 })
