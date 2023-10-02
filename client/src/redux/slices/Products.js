@@ -16,7 +16,7 @@ const Products = createSlice({
             });
         },
         update (state, arr) {
-            state.value = arr;
+            state.value = arr.payload;
         }
     },
 })

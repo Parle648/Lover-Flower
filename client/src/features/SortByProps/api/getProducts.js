@@ -6,9 +6,6 @@ export default async function getCurrentProducts ({types, sortBy, props}) {
         props: props.value
     });
 
-    console.log(bd);
-    
-    
     const request = fetch('http://localhost:5000/api/products/currentProducts', {
         method: 'POST',
         headers: {

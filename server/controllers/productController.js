@@ -38,10 +38,12 @@ class productController {
                         return obj;
                     };
                 })
+
+                console.log( Object.values(props).flat());
             
                 const byProps = Object.values(props).flat().map(prop => {
                     const arr = products.map(prod => {
-                        if (prod.light.includes(prop)) {
+                        if (prod.light.includes(prop.toUpperCase())) {
                             return prod;
                         }
                     })
