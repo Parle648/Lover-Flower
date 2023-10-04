@@ -2,7 +2,7 @@ import React from 'react';
 // Elements
 import styles from './styles/ProdList.module.scss';
 import SliderCart from '../../entities/SliderCart/index.tsx';
-import background from '../../img/inst1.png';
+import background from '../../img/product-img.png';
 // Hooks, Functions
 import { getAllProducts } from './api/api.ts'; 
 import { useSelector } from 'react-redux';

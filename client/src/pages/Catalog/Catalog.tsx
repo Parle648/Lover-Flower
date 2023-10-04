@@ -10,9 +10,6 @@ const Catalog = () => {
     return (
         <div className='Catalog'>
             <CatalogHero />
-            <SortByProps />
-            <SortBy />
-            <ProductsList />
             <Footer />
         </div>
     );

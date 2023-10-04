@@ -1,11 +1,20 @@
+@import '../../../Scss/global/global.scss';
+
 .block {
     position: absolute;
     top: 700px;
     right: 25%;
-    z-index: 111px;
+    z-index: 11;
+
+    @include md-d {
+        position: relative;
+        top: 0;
+        right: 0;
+    }
 }
 
-.head {
+.head,
+.bodyTtl {
     width: 257px;
     height: 40px;
     padding: 11px 12px 11px 20px;
@@ -18,7 +27,8 @@
     justify-content: space-between;
 }
 
-.headTtl {
+.headTtl,
+.bodyTtl {
     color: #FFF;
     font-family: 'Oswald';
     font-size: 12px;
@@ -31,4 +41,21 @@
 
 .arrow {
     cursor: pointer;
+}
+
+.body {
+    display: none;
+}
+
+.bodyActive {
+    display: block;
+}
+
+.bodyTtl {
+    margin-bottom: 0;
+
+    cursor: pointer;
+    &:hover {
+        background: rgba(0, 0, 0, 0.696);
+    }
 }

@@ -32,8 +32,6 @@ const SortByProps = () => {
     React.useEffect(() => {
         const obj = { types, sortBy, props };
 
-        console.log(obj);
-
         // Make request
         try {
             getCurrentProducts(obj)

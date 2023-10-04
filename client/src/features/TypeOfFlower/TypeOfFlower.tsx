@@ -21,13 +21,9 @@ const TypeOfFlower = () => {
     React.useEffect(() => {
         const obj = { types, sortBy, props };
 
-        console.log(types);
-        
-
         try {
             getCurrentProducts(obj)
             .then((res: any) => {
-                console.log(new Set(res))
                 dispatch(update(res));
             })
         } catch (err) {
@@ -35,36 +31,15 @@ const TypeOfFlower = () => {
         }
     }, [types])
     
-    function FindExaxts(event: React.MouseEvent<HTMLButtonElement>) {
+    function updateStore(event: React.MouseEvent<HTMLButtonElement>) {
         event?.currentTarget.classList.toggle(styles.active);
         const type = event?.currentTarget.innerText;
         
-        // console.log(types ,
-        //     sortBy,
-        //     props 
-        // );
-
-        
-        // const obj = { types: {
-        //     value: types.value.concat(type),
-        // }, sortBy, props };
-       
         if (event?.currentTarget.classList.contains(`${styles.active}`)) {
             dispatch(pushType(type))
         } else {
             dispatch(popType(type))
         }
-
-
-        // try {
-        //     getCurrentProducts(obj)
-        //     .then((res: any) => {
-        //         console.log(new Set(res))
-        //         dispatch(update(res));
-        //     })
-        // } catch (err) {
-        //     console.error(err)
-        // }
     }
 
     return (
@@ -77,7 +52,7 @@ const TypeOfFlower = () => {
             <div className={styles.topics}>
                 {buttons.map(string => {
                     return (
-                        <button className={styles.topic} onClick={FindExaxts}>
+                        <button className={styles.topic} onClick={updateStore}>
                             {string}
                         </button>
                     );
