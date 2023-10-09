@@ -3,7 +3,7 @@
 .block {
     background-color: #000;
     min-height: 1500px;
-    padding-top: 300px;
+    padding-top: 100px;
 }
 
 .background {
@@ -34,4 +34,40 @@
 .openTypeFlower {
     position: relative;
     color: #fff;
+}
+
+.sortBycontainer {
+    width: 1110px;
+    margin: 0 auto;
+    padding: 0 0 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+    @include lg-d {
+        width: 92%;
+    }
+}
+
+.filterOpened {
+    display: none;
+}
+
+
+.toggleFilter {
+    margin-left: 15px;
+    display: block;
+    margin-bottom: 10px;
+    color: #43FFD2;
+    font-family: 'Oswald';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.6px;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+}
+.filterActive {
+    color: #D978AC;
 }

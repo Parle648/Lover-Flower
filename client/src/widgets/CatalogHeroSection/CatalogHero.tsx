@@ -19,6 +19,18 @@ const CatalogHero = () => {
         setScroll(window.scrollY)}
     )
 
+    React.useEffect(() => {
+        document.querySelectorAll(`.${styles.toggleFilter}`).forEach((item: any) => {
+            item?.currentTarget.nextElementSibling?.classList.toggle(styles.filterOpened)
+        })
+    }, [])
+
+    function openFilter (event: React.MouseEvent<HTMLButtonElement>) {
+        event.currentTarget.nextElementSibling?.classList.toggle(styles.filterOpened)
+        console.log(event.currentTarget.nextElementSibling);
+        
+    }
+
     return (
         <div className={styles.block}>
             <img className={styles.background} src={document.body.clientWidth >= 800 ? backgr : backgrModile} alt="asdas" />
@@ -28,15 +40,15 @@ const CatalogHero = () => {
             {document.body.clientWidth <= 800 &&
                 <div>
                     <div className={styles.openPropsSort}>
-                        openPropsSort
+                        <span className={styles.toggleFilter} onClick={openFilter}>фильтр товаров</span>
                         <SortByProps />
                     </div>
                     <div className={styles.openSortBy}>
-                        openSortBy
+                        <span className={styles.toggleFilter} onClick={openFilter}>сортировка товаров</span>
                         <SortBy />
                     </div>
                     <div className={styles.openTypeFlower}>
-                        openTypeFlower
+                        <span className={styles.toggleFilter} onClick={openFilter}>Категории</span>
                         <TypeOfFlower /> 
                     </div>
                     <ProductsList />
@@ -45,7 +57,9 @@ const CatalogHero = () => {
             {document.body.clientWidth >= 800 && 
             <div>
                 <TypeOfFlower /> 
-                <SortBy />
+                <div className={styles.sortBycontainer}>
+                    <SortBy />
+                </div>
                 <div className={styles.productBlock}>
                     {document.body.clientWidth >= 800 && <SortByProps />}
                     <ProductsList />
