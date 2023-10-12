@@ -2,12 +2,75 @@ import React from 'react';
 import styles from './styles/prodPage.module.scss';
 
 import TopHeader from '../../widgets/TopHeader/TopHeader.tsx';
+import PopularFlowers from '../../widgets/PopularFlowers/index.tsx';
 import Footer from '../../widgets/Footer/index.tsx';
 
+import main from '../../img/main-product-img.png';
+import first from '../../img/first-product-img.png';
+import second from '../../img/second-product-img.png';
+
+import background from '../../img/product-page-background.png';
+
 const ProductPage = () => {
+
+
+    const [toggle, setToggle] = React.useState(true);
+
+    function changeOption () {
+        setToggle(!toggle);
+    }
+
+    const [count, setCount] = React.useState(1)
+
     return (
         <div className={styles.page}>
+            <img className={styles.background} src={background} alt="background" />
             <TopHeader />
+
+            {/*  */}
+
+                <div className={styles.productAbout}>
+                    <div className={styles.galary}>
+                        <img src={first} alt="galary" />
+                        <img src={main} alt="galary" />
+                        <img src={second} alt="galary" />
+                    </div>
+                    <div className={styles.description}>
+                        <a className={styles.goBack} href="/catalog">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M10.2713 12.1045L6.5 8.33316L10.2713 4.56183L10.7427 5.03316L7.44267 8.33316L10.7427 11.6332L10.2713 12.1045Z" fill="white"/>
+                            </svg>
+                            назад
+                        </a>
+                        <h2 className={styles.descriptionTtl}>рубиновые искры</h2>
+                        <h2 className={styles.cost}>167.00 p</h2>
+                        <p className={styles.structure}>
+                            <strong>Состав:</strong> Гвоздика (Диантус), Леукодендрон, Леукоспермум (Нутан), Лотос, Роза
+                        </p>
+                        <p className={styles.productDescription}>
+                            Завораживающая глубина ваших чувств передана огненными красками этого букета
+                        </p>
+                        <p className={styles.category}>
+                            <strong>Категории:</strong>  8 марта, Букет на 14 февраля, Букет на праздник, Букеты цветов на День рождения, Композиции из цветов, Композиции из цветов в коробке
+                        </p>
+                        <p className={styles.types}>
+                            <strong>Метки:</strong> Для начальника, Мужские букеты
+                        </p>
+
+                        <div className={styles.buyInterface}>
+                            <button className='whiteBtn'>В корзину</button>
+
+                            <div className={styles.counter}>
+                                <button className={styles.minus}>–</button>
+                                <div className={styles.count}>{count}</div>
+                                <button className={styles.plus}>+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            {/*  */}
+
             <h2 className={styles.additionalTtl}>Дополнительно к заказу:</h2>
             <div className={styles.aditionalOptions}>
                 <div className={styles.option}>
@@ -43,55 +106,58 @@ const ProductPage = () => {
 
             <div className={styles.switchOptions}>
                 <div className={styles.switchBtns}>
-                    <h2 className={`${styles.btn} ${styles.activeBtn}`}>доставка и оплата</h2>
-                    <h2 className={styles.btn}>отзывы</h2>
+                    <h2 className={`${styles.btn} ${toggle && styles.activeBtn}`} onClick={changeOption}>доставка и оплата</h2>
+                    <h2 className={`${styles.btn} ${!toggle && styles.activeBtn}`} onClick={changeOption}>отзывы</h2>
                 </div>
-                <div className={styles.slider}>
+                <div className={`${styles.slider} ${!toggle && styles.triggerActive}`}>
                     <div className={styles.sliderTrigger}></div>
                 </div>
             </div>
 
-            <div className={styles.deliveryVariant}>
+            {toggle ?
+                <div className={styles.deliveryVariant}>
 
-                <h2 className={styles.seliveryVarTtl}>Способы оплаты:</h2>
-                <ul className={styles.deliveryList}>
-                    <li className={styles.deliveryListItem}>БАНКОВСКОЙ КАРТОЙ ПРИ ОФОРМЛЕНИИ ЗАКАЗА ЧЕРЕЗ САЙТ</li>
-                    <li className={styles.deliveryListItem}>НАЛИЧНЫМИ ИЛИ БАНКОВСКОЙ КАРТОЙ ПРИ САМОВЫВОЗЕ</li>
-                    <li className={styles.deliveryListItem}>НАЛИЧНЫМИ ПРИ ДОСТАВКЕ КУРЬЕРОМ</li>
-                    <li className={styles.deliveryListItem}>КРИПТОВАЛЮТОЙ ОНЛАЙН</li>
-                </ul>
+                    <h2 className={styles.seliveryVarTtl}>Способы оплаты:</h2>
+                    <ul className={styles.deliveryList}>
+                        <li className={styles.deliveryListItem}>БАНКОВСКОЙ КАРТОЙ ПРИ ОФОРМЛЕНИИ ЗАКАЗА ЧЕРЕЗ САЙТ</li>
+                        <li className={styles.deliveryListItem}>НАЛИЧНЫМИ ИЛИ БАНКОВСКОЙ КАРТОЙ ПРИ САМОВЫВОЗЕ</li>
+                        <li className={styles.deliveryListItem}>НАЛИЧНЫМИ ПРИ ДОСТАВКЕ КУРЬЕРОМ</li>
+                        <li className={styles.deliveryListItem}>КРИПТОВАЛЮТОЙ ОНЛАЙН</li>
+                    </ul>
 
-                <h2 className={styles.seliveryVarTtl}>Способы оплаты:</h2>
-                <ul className={styles.deliveryList}>
-                    <li className={styles.deliveryListItem}><strong>Бесплатно</strong> – при заказе на сумму <span className={styles.greenText}> от 90 рублей</span></li>
-                    <li className={styles.deliveryListItem}><strong>10 рублей</strong> – при заказе на сумму <span className={styles.greenText}> менее 90 рублей</span></li>
-                    <li className={styles.deliveryListItem}>Возможность, сроки и стоимость доставки за пределы МКАД, доставки в ночное время, праздники <span className={styles.greenText}>оговариваются с менеджером</span></li>
-                    <li className={styles.deliveryListItem}>Так же вы можете забрать ваш заказ самостоятельно по адресу:<p className={styles.greenText}> г. Минск, ул. Тимирязева д. 67, комн. 112 ежедневно с 10.00 до 21.00</p></li>
-                </ul>
+                    <h2 className={styles.seliveryVarTtl}>Способы оплаты:</h2>
+                    <ul className={styles.deliveryList}>
+                        <li className={styles.deliveryListItem}><strong>Бесплатно</strong> – при заказе на сумму <span className={styles.greenText}> от 90 рублей</span></li>
+                        <li className={styles.deliveryListItem}><strong>10 рублей</strong> – при заказе на сумму <span className={styles.greenText}> менее 90 рублей</span></li>
+                        <li className={styles.deliveryListItem}>Возможность, сроки и стоимость доставки за пределы МКАД, доставки в ночное время, праздники <span className={styles.greenText}>оговариваются с менеджером</span></li>
+                        <li className={styles.deliveryListItem}>Так же вы можете забрать ваш заказ самостоятельно по адресу:<p className={styles.greenText}> г. Минск, ул. Тимирязева д. 67, комн. 112 ежедневно с 10.00 до 21.00</p></li>
+                    </ul>
 
-                <h2 className={styles.seliveryVarTtl}>Способы оплаты:</h2>
-                <ul className={styles.deliveryList}>
-                    <li className={styles.deliveryListItem}>Доставка осуществляется по городу Минску в пределах МКАД <span className={styles.greenText}>в любой день с 09.00 до 22.00.</span> Доставка в ночное время осуществляется по договоренности с оператором</li>
-                </ul>
-            </div>
-
-            <div className={styles.comments}>
-                <h2 className={styles.greensubttl}>Будьте первым, кто оставил отзыв на “Рубиновые искры”</h2>
-                <h2 className={styles.subttl}>Ваш адрес email не будет опубликован. Обязательные поля помечены *</h2>
-                <br />
-                <form>
-                    <h2 className={styles.inputTtl}>Ваш отзыв*</h2>
-                    <input className={styles.input} type="text" placeholder='Введите комментарий'/>
-                    <h2 className={styles.inputTtl}>Ваш отзыв*</h2>
-                    <input className={styles.input} type="text" placeholder='Введите комментарий'/>
-                    <h2 className={styles.inputTtl}>Ваш отзыв*</h2>
-                    <input className={styles.input} type="text" placeholder='Введите комментарий'/>
+                    <h2 className={styles.seliveryVarTtl}>Способы оплаты:</h2>
+                    <ul className={styles.deliveryList}>
+                        <li className={styles.deliveryListItem}>Доставка осуществляется по городу Минску в пределах МКАД <span className={styles.greenText}>в любой день с 09.00 до 22.00.</span> Доставка в ночное время осуществляется по договоренности с оператором</li>
+                    </ul>
+                </div> :
+                <div className={styles.comments}>
+                    <h2 className={styles.greensubttl}>Будьте первым, кто оставил отзыв на “Рубиновые искры”</h2>
+                    <h2 className={styles.subttl}>Ваш адрес email не будет опубликован. Обязательные поля помечены *</h2>
                     <br />
-                    <button className='greenBtn'>отправить</button>
+                    <form>
+                        <h2 className={styles.inputTtl}>Ваш отзыв*</h2>
+                        <input className={styles.input} type="text" placeholder='Введите комментарий'/>
+                        <h2 className={styles.inputTtl}>Ваш отзыв*</h2>
+                        <input className={styles.input} type="text" placeholder='Введите комментарий'/>
+                        <h2 className={styles.inputTtl}>Ваш отзыв*</h2>
+                        <input className={styles.input} type="text" placeholder='Введите комментарий'/>
+                        <br />
+                        <button className='greenBtn'>отправить</button>
 
-                    <h2 className={styles.policy}>Нажимая  на кнопку «Отправить», я даю свое согласие на обработку персональных данных, в соответствии с <span className={styles.pink}>Политикой конфиденциальности</span></h2>
-                </form>
-            </div>
+                        <h2 className={styles.policy}>Нажимая  на кнопку «Отправить», я даю свое согласие на обработку персональных данных, в соответствии с <span className={styles.pink}>Политикой конфиденциальности</span></h2>
+                    </form>
+                </div>
+            }
+
+            <PopularFlowers />
             <Footer />
         </div>
     );

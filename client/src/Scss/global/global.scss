@@ -28,40 +28,7 @@
     }
 }
 
-.whiteBtn {
-    width: 225px;
-    height: 50px;
-    background-color: transparent;
-    color: #fff;
-    border: 1px solid #fff;
-    cursor: pointer;
-    text-align: center;
-    font-family: 'Oswald';
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    transition: .35s;
-    &:hover {
-        background-color: #43FFD2;
-        border-color: #43FFD2;
-        color: #000;
-    }
-    &:focus {
-        background: transparent;
-        outline: none;
-        color: #fff;
-        border: 1px solid #43FFD2;
-    }
-    &:active {
-        color: #43FFD2;
-        color: #000;
-        background-color: #43FFD2;
-        box-shadow: 0px 0px 10px 0px #01281F inset;
-    }
-}
+
 
 .btnDisabled {
     border: 1px solid #555;
@@ -189,5 +156,45 @@ $brackpoints: (
     padding-top: 100px;
     @include lg-d {
         width: 92%;
+    }
+}
+
+.whiteBtn {
+    width: 225px;
+    height: 50px;
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    cursor: pointer;
+    text-align: center;
+    font-family: 'Oswald';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    transition: .35s;
+    &:hover {
+        background-color: #43FFD2;
+        border-color: #43FFD2;
+        color: #000;
+    }
+    &:focus {
+        background: transparent;
+        outline: none;
+        color: #fff;
+        border: 1px solid #43FFD2;
+    }
+    &:active {
+        color: #43FFD2;
+        color: #000;
+        background-color: #43FFD2;
+        box-shadow: 0px 0px 10px 0px #01281F inset;
+    }
+
+    @include md-d {
+        width: 180px;
+        height: 55px;
     }
 }
