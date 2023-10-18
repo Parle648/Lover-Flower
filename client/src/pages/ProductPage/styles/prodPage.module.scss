@@ -501,7 +501,6 @@
     align-items: center;
     position: relative;
     z-index: 10;
-    // transform: translate(-9%, -50%);
     @include lg-d {
         display: none;
     }
@@ -521,13 +520,6 @@
     margin-bottom: 19px;
     transition: .35s;
     background-color: transparent;
-    // @include md-d {
-    //     width: 100%;
-    //     display: grid;
-    //     justify-content: center;
-    //     grid-template-columns: repeat(2, 1fr);
-    //     margin: 0 auto;
-    // }
     @include md-d {
         width: 92%;
         display: flex;

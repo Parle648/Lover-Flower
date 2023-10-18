@@ -4,9 +4,14 @@
     background-color: #040A0A;
     padding-top: 150px;
     height: auto;
+
+    @include md-d {
+        padding-top: 70px;
+    }
 }
 
 .background {
+    max-height: 2579px;
     min-width: 100%;
     position: absolute;
     top: 0;
@@ -22,10 +27,19 @@
     line-height: normal;
     letter-spacing: 2px;
     text-transform: uppercase;
+    position: relative;
+
+    @include md-d {
+        font-size: 40px;
+    }
 }
 
 .secondTtl {
     margin: 0px 0px 80px 95px;
+
+    @include md-d {
+        margin: 0;
+    }
 }
 
 .orderTtl,
@@ -40,6 +54,10 @@
     text-transform: uppercase;
 
     margin-bottom: 40px;
+
+    @include md-d {
+        font-size: 14px;
+    }
 }
 
 .orderSubttl {
@@ -59,7 +77,8 @@
     margin-bottom: 4px;
 }
 
-.input {
+.input,
+.deliveryInput {
     width: 540px;
     height: 60px;
     margin-bottom: 20px;
@@ -73,4 +92,85 @@
     @include md-d {
         width: 92%;
     }
+}
+
+.deliveryInputs {
+    display: grid;
+    grid-template-columns: repeat(3, 160px);
+    grid-gap: 20px 30px;
+
+    @include md-d {
+        display: flex;
+        flex-direction: column;
+    } 
+}
+
+.deliveryInput {
+    width: 160px;
+}
+
+.fakeRadio {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #555;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-right: 15px;
+}
+
+.fakeRadioBorder {
+    border: 1px solid #fff;
+
+    &::before {
+        content: '';
+        width: 10px;
+        height: 10px;
+        background-color: #fff;
+        border-radius: 50%;
+        position: absolute;
+    }
+}
+
+.radioLabel {
+    display: flex;
+    align-items: center;
+
+    color: #FFF;
+    font-family: 'Oswald';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.84px;
+    text-transform: uppercase;
+
+    margin-bottom: 15px;
+}
+
+.paymentRadio {
+    display: none;
+}
+
+.policy {
+    width: 342px;
+    padding-top: 10px;
+    color: #FFF;
+    font-family: 'Roboto';
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.2px;
+    margin-bottom: 188px;
+
+    @include md-d {
+        width: 92%;
+    }
+}
+
+.pink {
+    color: #D978AC;
 }
