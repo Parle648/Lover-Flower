@@ -1,0 +1,85 @@
+@import '../../../Scss/global/global.scss';
+
+.block {
+    background-color: #040A0A;
+}
+
+.wrapper {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    @include md-d {
+        top: 50px;
+    }
+}
+
+.background {
+    min-width: 100%;
+    height: 944px;
+    object-fit: cover;
+
+    @include md-d {
+        height: auto;
+    }
+}
+
+.ttl,
+.secondTtl {
+    color: #FFF;
+    font-family: 'Cormorant';
+    font-size: 100px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    @include lg-d {
+        font-size: 60px;
+    }
+
+    @include md-d {
+        font-size: 40px;
+    }
+}
+
+.secondTtl {
+    position: relative;
+    margin-left: 170px;
+
+    @include lg-d {
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+}
+
+.paragraph {
+    color: #FFF;
+    font-family: 'Oswald';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.56px;
+    text-transform: uppercase;
+
+    max-width: 343px;
+    margin-bottom: 20px;
+}
+
+.toMain {
+    color: #fff;
+    font-family: 'Oswald';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.56px;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+
+    display: block;
+    padding-top: 40px;
+}
