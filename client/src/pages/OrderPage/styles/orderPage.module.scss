@@ -89,6 +89,8 @@
     border: 1px solid #555;
     color: #555;
 
+    position: relative;
+
     @include md-d {
         width: 92%;
     }

@@ -1,0 +1,93 @@
+@import '../../../Scss/global/global.scss';
+
+.block {
+    background-color: #040A0A;
+}
+
+.wrapper {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    @include md-d {
+        top: 50px;
+    }
+}
+
+.background {
+    min-width: 100%;
+}
+
+.ttl,
+.secondTtl {
+    color: #FFF;
+    font-family: 'Cormorant';
+    font-size: 100px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    @include lg-d {
+        font-size: 60px;
+    }
+
+    @include md-d {
+        font-size: 40px;
+    }
+}
+
+.secondTtl {
+    position: relative;
+    margin-left: 500px;
+    &::before {
+        content: '';
+        height: 1px;
+        width: 349px;
+        position: absolute;
+        top: 50%;
+        left: -400px;
+        background-color: #D978AC;
+
+        @include lg-d {
+            display: none;
+        }
+    }
+
+    @include lg-d {
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+}
+
+.paragraph {
+    color: #FFF;
+    font-family: 'Oswald';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.56px;
+    text-transform: uppercase;
+
+    max-width: 343px;
+    margin-bottom: 20px;
+}
+
+.toMain {
+    color: #43FFD2;
+    font-family: 'Oswald';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.56px;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+
+    text-decoration: none;
+    display: block;
+    padding-top: 40px;
+}

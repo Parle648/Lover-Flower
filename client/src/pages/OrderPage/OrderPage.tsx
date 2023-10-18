@@ -45,9 +45,9 @@ const OrderPage = () => {
                     <h2 className={styles.inputTtl}>Ваше имя*</h2>
                     <input className={styles.input} type="text" placeholder='Введите ваше имя'/>
                     <h2 className={styles.inputTtl}>Ваш телефон*</h2>
-                    <input className={styles.input} type="text" placeholder='+7 (977) 777-77-77'/>
+                    <input className={styles.input} type="number" placeholder='+7 (977) 777-77-77'/>
                     <h2 className={styles.inputTtl}>Ваш e-mail*</h2>
-                    <input className={styles.input} type="text" placeholder='Введите вашу почту'/>
+                    <input className={styles.input} type="mail" placeholder='Введите вашу почту'/>
                     <h2 className={styles.inputTtl}>Телефон получателя (необязательно)</h2>
                     <input className={styles.input} type="text" placeholder='+7 (977) 777-77-77'/>
                     <h2 className={styles.inputTtl}>Имя получателя (необязательно)</h2>
