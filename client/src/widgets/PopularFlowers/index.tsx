@@ -40,12 +40,12 @@ const Index = () => {
                         <img className={styles.sliderArrow} src={arrowSecond} alt="" onClick={moveRight}/>
                     </div>
                     <div className={styles.sliderLine} style={{marginLeft: `${margin}px`}}>
-                        <Cart img={img1} ttl='лучший день' cost='167.000 ₽' />
-                        <Cart img={img1} ttl='лучший день' cost='167.000 ₽' />
-                        <Cart img={img1} ttl='лучший день' cost='167.000 ₽' />
-                        <Cart img={img1} ttl='лучший день' cost='167.000 ₽' />
-                        <Cart img={img1} ttl='лучший день' cost='167.000 ₽' />
-                        <Cart img={img1} ttl='лучший день' cost='167.000 ₽' />
+                        <Cart id={5} img={img1} ttl='лучший день' cost='167.000 ₽' />
+                        <Cart id={5} img={img1} ttl='лучший день' cost='167.000 ₽' />
+                        <Cart id={5} img={img1} ttl='лучший день' cost='167.000 ₽' />
+                        <Cart id={5} img={img1} ttl='лучший день' cost='167.000 ₽' />
+                        <Cart id={5} img={img1} ttl='лучший день' cost='167.000 ₽' />
+                        <Cart id={5} img={img1} ttl='лучший день' cost='167.000 ₽' />
                     </div>
                 </div>
                 <Link className={styles.link} to='/catalog'>смотреть весь каталог

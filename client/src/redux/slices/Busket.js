@@ -1,20 +1,42 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { useEffect } from 'react';
 
 const BusketSlice = createSlice({
     name: 'Busket',
     initialState: {
-        value: 5,
+        value: [],
     },
     reducers: {
-        increment(state) {
-            state.value++;
+        addProduct(state, obj) {
+            console.log(obj.payload);
+            state.value.push(obj.payload);
         },
-        decrement(state) {
-            state.value--;
+        removeProduct (state, id) {
+            state.value = state.value.filter(product => product.id !== id)
         },
+        countPlus (state, id) {
+            state.value = state.value.map(product => {
+                if (product.id !== id) {
+                    return product;
+                } else {
+                    product.id++;
+                    return product;
+                }
+            })
+        },
+        countMinus (state, id) {
+            state.value = state.value.map(product => {
+                if (product.id !== id) {
+                    return product;
+                } else {
+                    product.id++;
+                    return product;
+                }
+            })
+        }
     },
 })
 
-export const {increment, decrement} = BusketSlice.actions
+export const { addProduct, removeProduct, countPlus, countMinus} = BusketSlice.actions
 
 export default BusketSlice.reducer;

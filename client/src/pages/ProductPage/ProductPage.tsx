@@ -185,12 +185,12 @@ const ProductPage = () => {
             </div>
             <div className={styles.prodPageSlider}>
                 <div className={styles.sliderLine} style={{marginLeft: `${margin}px`}}>
-                    <Cart img={img1} ttl='лучший день' cost='167.000 ₽' />
-                    <Cart img={img1} ttl='лучший день' cost='167.000 ₽' />
-                    <Cart img={img1} ttl='лучший день' cost='167.000 ₽' />
-                    <Cart img={img1} ttl='лучший день' cost='167.000 ₽' />
-                    <Cart img={img1} ttl='лучший день' cost='167.000 ₽' />
-                    <Cart img={img1} ttl='лучший день' cost='167.000 ₽' />
+                    <Cart id={5} img={img1} ttl='лучший день' cost='167.000 ₽' />
+                    <Cart id={5} img={img1} ttl='лучший день' cost='167.000 ₽' />
+                    <Cart id={5} img={img1} ttl='лучший день' cost='167.000 ₽' />
+                    <Cart id={5} img={img1} ttl='лучший день' cost='167.000 ₽' />
+                    <Cart id={5} img={img1} ttl='лучший день' cost='167.000 ₽' />
+                    <Cart id={5} img={img1} ttl='лучший день' cost='167.000 ₽' />
                 </div>
             </div>
 

@@ -8,6 +8,7 @@ import { getAllProducts } from './api/api.ts';
 import { useSelector } from 'react-redux';
 
 type CartType = {
+    id: number,
     img: string,
     title: string,
     cost: string,
@@ -38,13 +39,13 @@ const ProductsList = () => {
             { choosedTypes.length !== 0 
                 ? choosedTypes.map((product: CartType) => {
                 return (
-                    <SliderCart img={background} ttl={product.title} cost={product.cost}/>
+                    <SliderCart id={product.id} img={background} ttl={product.title} cost={product.cost}/>
                     )
                 }) 
 
                 : allProducts.map((elem) => {
                     return (
-                        <SliderCart img={background} ttl={elem.title} cost={elem.cost}/>
+                        <SliderCart id={elem.id} img={background} ttl={elem.title} cost={elem.cost}/>
                     )
                 }) 
             }
