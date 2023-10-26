@@ -20,11 +20,24 @@ type State = {
     }
 };
 
+type Product = {
+    id: number,
+    cost: number,
+    count: number,
+}
+
 const ProductsList = () => {
     let choosedTypes = useSelector((state: State) => state.products.value);
     const [allProducts, setAllProducts] = React.useState<CartType[]>([]);
 
+    
     React.useEffect(() => {
+        if (localStorage.BusketInform === undefined) {
+            localStorage.setItem("BusketInform", JSON.stringify([]))
+        }
+
+
+        
         try {
             getAllProducts().then((res: any) => {
                 setAllProducts(res);

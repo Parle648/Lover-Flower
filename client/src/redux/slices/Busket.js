@@ -8,7 +8,6 @@ const BusketSlice = createSlice({
     },
     reducers: {
         addProduct(state, obj) {
-            console.log(obj.payload);
             state.value.push(obj.payload);
         },
         removeProduct (state, id) {

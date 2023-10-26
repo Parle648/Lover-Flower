@@ -28,30 +28,6 @@
     }
 }
 
-
-
-.btnDisabled {
-    border: 1px solid #555;
-    background: transparent;
-    color: #555;
-    cursor: auto;
-    &:hover {
-        border: 1px solid #555;
-        background: transparent;
-        color: #555;
-    }
-    &:focus {
-        border: 1px solid #555;
-        background: transparent;
-        color: #555;
-    }
-    &:active {
-        border: 1px solid #555;
-        background: transparent;
-        color: #555;
-    }
-}
-
 .greenInput {
     border: 1px solid #43FFD2;
     background-color: transparent;
@@ -196,5 +172,27 @@ $brackpoints: (
     @include md-d {
         width: 180px;
         height: 55px;
+    }
+}
+
+.btnDisabled {
+    border: 1px solid #555;
+    background: transparent;
+    color: #555;
+    cursor: auto;
+    &:hover {
+        border: 1px solid #555;
+        background: transparent;
+        color: #555;
+    }
+    &:focus {
+        border: 1px solid #555;
+        background: transparent;
+        color: #555;
+    }
+    &:active {
+        border: 1px solid #555;
+        background: transparent;
+        color: #555;
     }
 }

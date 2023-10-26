@@ -5,9 +5,27 @@ import { useSelector } from 'react-redux';
 import busketImg from '../../img/busket.svg';
 import ProductSnippet from '../../entities/ProductSnippet/ProductSnippet';
 
+
+type Product = {
+    id: number,
+    cost: number,
+    ttl: string,
+    count: number,
+}
+
+
 const Basket = () => {
-    // const {value: count} = useSelector((state: any) => state.basket)
-    const count = 0;
+    const [count, setCount] = React.useState(0);
+    
+    let [choosedProducts, setChoosedProducts] = React.useState(JSON.parse(localStorage.BusketInform))
+    
+    localStorage.onchange = () => console.log(8);
+    
+    React.useEffect(() => {
+        window.addEventListener('storage', () => {
+            console.log(0);
+        });
+    }, []);
 
     const [scroll, setScroll] = React.useState(0)
     document.addEventListener('scroll', () => {
@@ -23,9 +41,11 @@ const Basket = () => {
             <div className={styles.busketAside} style={{top: `${scroll}px`}}>
                 <div className="">
                     <h2 className={styles.asideTtl}>Ваша корзина</h2>
-                    <ProductSnippet />
-                    <ProductSnippet />
-                    <ProductSnippet />
+                        {
+                            choosedProducts.map((obj: Product) => {
+                                return <ProductSnippet id={obj.id} ttl={obj.ttl} cost={obj.cost} count={obj.count} />
+                            })
+                        }
                 </div>
                 <div className="">
                     <p className={styles.asideParagraph}>
