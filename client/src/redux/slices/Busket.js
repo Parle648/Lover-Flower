@@ -7,28 +7,31 @@ const BusketSlice = createSlice({
         value: [],
     },
     reducers: {
+        updateStore(state, store) {
+            state.value = store.payload;
+        },
         addProduct(state, obj) {
             state.value.push(obj.payload);
         },
         removeProduct (state, id) {
-            state.value = state.value.filter(product => product.id !== id)
+            state.value = state.value.filter(product => product.id !== id.payload)
         },
         countPlus (state, id) {
             state.value = state.value.map(product => {
-                if (product.id !== id) {
+                if (product.id !== id.payload) {
                     return product;
                 } else {
-                    product.id++;
+                    product.count++;
                     return product;
                 }
             })
         },
         countMinus (state, id) {
             state.value = state.value.map(product => {
-                if (product.id !== id) {
+                if (product.id !== id.payload) {
                     return product;
                 } else {
-                    product.id++;
+                    product.count--;
                     return product;
                 }
             })
@@ -36,6 +39,6 @@ const BusketSlice = createSlice({
     },
 })
 
-export const { addProduct, removeProduct, countPlus, countMinus} = BusketSlice.actions
+export const { updateStore, addProduct, removeProduct, countPlus, countMinus} = BusketSlice.actions
 
 export default BusketSlice.reducer;

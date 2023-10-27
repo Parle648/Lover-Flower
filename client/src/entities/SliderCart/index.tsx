@@ -1,4 +1,6 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { addProduct } from '../../redux/slices/Busket.js';
 import styles from './styles/slidercart.module.scss';
 
 type CartType = {
@@ -9,25 +11,16 @@ type CartType = {
 }
 
 const Index = ({id, img, ttl, cost}: CartType) => {
-
-    const [disabled, setDisabled] = React.useState(false)
-
-    // window.addEventListener('storage', () => {
-    //     console.log(0);
-    // });
+    const dispatch = useDispatch();
 
     function updateStore(event: React.MouseEvent<HTMLButtonElement>) {
-        const productData = {
-            id, 
-            cost, 
-            ttl,
-            count: 1
-        }
+        const productInformData = { id, cost, ttl, count: 1 }
 
         if (!event.currentTarget.classList.contains('btnDisabled')) {
             event.currentTarget.classList.add('btnDisabled')
 
-            localStorage.BusketInform = JSON.stringify(JSON.parse(localStorage.BusketInform).concat(productData));
+            localStorage.BusketInform = JSON.stringify(JSON.parse(localStorage.BusketInform).concat(productInformData));
+            dispatch(addProduct(productInformData));
         }
 
     }
@@ -37,7 +30,7 @@ const Index = ({id, img, ttl, cost}: CartType) => {
             <img className={styles.img} src={img} alt="img" />
             <h2 className={styles.ttl}>{ttl}</h2>
             <h2 className={styles.cost}>{cost}</h2>
-            <button className={`whiteBtn ${disabled ? 'btnDisabled' : ''}`} onClick={updateStore}>В корзину</button>
+            <button className={`whiteBtn`} onClick={updateStore}>В корзину</button>
         </div>
     );
 };

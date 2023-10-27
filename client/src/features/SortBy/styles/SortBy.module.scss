@@ -1,7 +1,7 @@
 @import '../../../Scss/global/global.scss';
 
 .block {
-    z-index: 11;
+    z-index: 9;
 
     @include md-d {
         position: relative;

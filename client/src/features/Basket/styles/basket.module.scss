@@ -10,6 +10,7 @@
     justify-content: center;
     position: relative;
     cursor: pointer;
+
 }
 
 .counter {
@@ -36,21 +37,22 @@
 //busketAside
 
 .busketAside {
-    width: 400px;
+    overflow: hidden;
+    width: 0px;
     height: 100vh;
     margin-top: -22px;
-    padding: 20px 30px;
     background-color: #000;
-    position: absolute;
+    position: fixed;
     z-index: 108;
     top: 0;
     right: 0;
-    margin-right: -35.8%;
 
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
+
+    transition: .35s;
 
     @include lg-d {
         margin-right: 0;
@@ -59,6 +61,7 @@
     @include md-d {
         width: 100%;
         padding: 10px;
+        margin-right: -400px;
     }
 }
 
@@ -81,9 +84,17 @@
     padding-bottom: 16px;
     border-bottom: 1px solid #555;
 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
     @include md-d {
         font-size: 14px;
     }
+}
+
+.closeBtn {
+    cursor: pointer;
 }
 
 .asideParagraph {
@@ -121,5 +132,16 @@
 
     @include md-d {
         width: 280px;
+    }
+}
+
+// animations 
+
+.busketOpened {
+    width: 400px;
+    padding: 20px 30px;
+
+    @include md-d {
+        margin: 12px -56px 0px 0px;
     }
 }

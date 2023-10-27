@@ -1,10 +1,10 @@
 import React from 'react';
-
-import styles from './styles/basket.module.scss';
-import { useSelector } from 'react-redux';
-import busketImg from '../../img/busket.svg';
 import ProductSnippet from '../../entities/ProductSnippet/ProductSnippet';
-
+import styles from './styles/basket.module.scss';
+import busketImg from '../../img/busket.svg';
+import close from '../../img/busket-close.png';
+import { useSelector, useDispatch } from 'react-redux';
+import { updateStore } from '../../redux/slices/Busket.js';
 
 type Product = {
     id: number,
@@ -13,43 +13,43 @@ type Product = {
     count: number,
 }
 
-
 const Basket = () => {
-    const [count, setCount] = React.useState(0);
+    const dispatch = useDispatch();
     
-    let [choosedProducts, setChoosedProducts] = React.useState(JSON.parse(localStorage.BusketInform))
-    
-    localStorage.onchange = () => console.log(8);
-    
+    let addedPeoducts = useSelector((state: any) => state.basket.value);
+    const count = addedPeoducts.reduce((amount: number, obj: Product) => {return amount + obj.count}, 0);
+    const amount = addedPeoducts.reduce((amount: number, obj: Product) => {return amount + (obj.count * obj.cost)}, 0);
+
+    // updating the store after a reload
     React.useEffect(() => {
-        window.addEventListener('storage', () => {
-            console.log(0);
-        });
-    }, []);
+        dispatch(updateStore(JSON.parse(localStorage.BusketInform)))
+        addedPeoducts = JSON.parse(localStorage.BusketInform)
+    }, [])
 
-    const [scroll, setScroll] = React.useState(0)
-    document.addEventListener('scroll', () => {
-        setScroll(window.pageYOffset)
-    })
-
+    // toggle busket block
+    const [opened, setOpened] = React.useState(false)
+    function toggleBusket() {
+        setOpened(!opened)
+    }
+    
     return (
         <div className={styles.block}>
-            <div className={styles.container}>
+            <div className={styles.container} onClick={toggleBusket}>
                 <img src={busketImg} alt="busketImg" />
                 <div className={`${styles.counter} ${count < 1 && styles.unvisible}`}>{count}</div>
             </div>
-            <div className={styles.busketAside} style={{top: `${scroll}px`}}>
+            <div className={`${styles.busketAside} ${opened && styles.busketOpened}`} >
                 <div className="">
-                    <h2 className={styles.asideTtl}>Ваша корзина</h2>
+                    <h2 className={styles.asideTtl}>Ваша корзина <img className={styles.closeBtn} src={close} alt="close" onClick={toggleBusket}/></h2>
                         {
-                            choosedProducts.map((obj: Product) => {
+                            addedPeoducts.map((obj: Product) => {
                                 return <ProductSnippet id={obj.id} ttl={obj.ttl} cost={obj.cost} count={obj.count} />
                             })
                         }
                 </div>
                 <div className="">
                     <p className={styles.asideParagraph}>
-                        <span className={styles.green}>Предварительный итог: 315.00 руб.</span> <br />
+                        <span className={styles.green}>Предварительный итог: {amount} руб.</span> <br />
                         Чтобы узнать стоимость доставки, перейдите к оформлению заказа.
                     </p>
                     <button className={styles.btn}>Оформить заказ</button>
