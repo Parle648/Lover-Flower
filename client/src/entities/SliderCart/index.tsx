@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { addProduct } from '../../redux/slices/Busket.js';
 import styles from './styles/slidercart.module.scss';
 
@@ -27,9 +28,11 @@ const Index = ({id, img, ttl, cost}: CartType) => {
 
     return (
         <div className={styles.block} id={`${id}`}>
-            <img className={styles.img} src={img} alt="img" />
-            <h2 className={styles.ttl}>{ttl}</h2>
-            <h2 className={styles.cost}>{cost}</h2>
+            <a href={`/catalog/:${id}`}>
+                <img className={styles.img} src={img} alt="img" />
+                <h2 className={styles.ttl}>{ttl}</h2>
+                <h2 className={styles.cost}>{cost}</h2>
+            </a>    
             <button className={`whiteBtn`} onClick={updateStore}>В корзину</button>
         </div>
     );

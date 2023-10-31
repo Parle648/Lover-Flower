@@ -7,6 +7,7 @@
 .background {
     min-width: 100%;
     object-fit: cover;
+    position: absolute;
 
     @include lg-d {
         padding-bottom: 930px;
@@ -19,7 +20,7 @@
 }
 
 .wrapper {
-    position: absolute;
+    position: relative;
     top: 100px;
     left: 50%;
     transform: translate(-50%, 0);
@@ -46,7 +47,7 @@
     @include md-d {
         margin-left: 0;
         margin-bottom: 30px;
-        font-size: 60px;
+        font-size: 40px;
     }
 }
 
@@ -68,6 +69,7 @@
 
     @include md-d {
         justify-content: center;
+        margin-bottom: 20px;
     }
 }
 
@@ -116,15 +118,24 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+
+    @include lg-d {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.sendUsSecondTtl {
+    margin-left: 500px;
 }
 
 .sendUsFirstTtl,
 .sendUsSecondTtl {
     margin-bottom: 0;
-}
 
-.sendUsSecondTtl {
-    margin-left: 500px;
+    @include lg-d {
+        margin-left: 0;
+    }
 }
 
 .sendRequestParagraph {
@@ -150,6 +161,18 @@
         position: absolute;
         left: 0;
         top: -54px;
+
+        @include lg-d {
+            top: 0;
+        }
+    }
+
+    @include lg-d {
+        padding-top: 70px;
+    }
+
+    @include md-d {
+        padding-top: 20px;
     }
 }
 
@@ -162,6 +185,11 @@
     align-items: flex-start;
     right: 0;
     position: absolute;
+
+    @include md-d {
+        position: relative;
+        padding-top: 20px;
+    }
 }
 
 .description {
@@ -191,7 +219,7 @@
     }
 
     @include md-d {
-        width: 300px;
+        width: 280px;
     }
 }
 
@@ -218,4 +246,37 @@
 
 .link {
     color: #D978AC;
+}
+
+//map
+
+.mapTtl {
+    margin-top: 44px;
+    margin-bottom: 20px;
+
+    color: #43FFD2;
+    font-family: 'Oswald';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;    
+}
+
+.map {
+    width: 1108px;
+    height: 427px;
+    margin: 0 auto 120px;
+
+    @include lg-d {
+        width: 92%;
+        height: 300px;
+    }
+
+    @include md-d {
+        width: 280px;
+        height: 300px;
+        margin-left: -7.5px;
+    }
 }

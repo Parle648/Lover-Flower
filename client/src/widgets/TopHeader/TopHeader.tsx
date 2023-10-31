@@ -61,7 +61,6 @@ const TopHeader = () => {
                     <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><a href='/aboutUs'>О нас</a></li>
                     <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><a href='/contacts'>Контакты</a></li>
                     <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><a href='/questions'>FAQ</a></li>
-                    <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><a href=''></a> Каталоssг</li>
                 </ul>
             </nav>
 
