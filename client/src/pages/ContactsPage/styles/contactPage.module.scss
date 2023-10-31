@@ -7,25 +7,27 @@
 .background {
     min-width: 100%;
     object-fit: cover;
-    position: absolute;
-
+    position: relative;
+    
     @include lg-d {
         padding-bottom: 930px;
     }
-
+    
     @include md-d {
+        position: absolute;
         height: auto;
         padding-bottom: 388px;
     }
 }
 
 .wrapper {
-    position: relative;
+    position: absolute;
     top: 100px;
     left: 50%;
     transform: translate(-50%, 0);
 
     @include md-d {
+        position: relative;
         top: 50px;
     }
 }
@@ -251,7 +253,7 @@
 //map
 
 .mapTtl {
-    margin-top: 44px;
+    margin-top: 440px;
     margin-bottom: 20px;
 
     color: #43FFD2;
@@ -261,20 +263,25 @@
     font-weight: 700;
     line-height: normal;
     letter-spacing: 0.8px;
-    text-transform: uppercase;    
+    text-transform: uppercase;   
+    
+    @include md-d {
+        margin-top: 44px;
+    }
 }
 
 .map {
     width: 1108px;
     height: 427px;
-    margin: 0 auto 120px;
-
+    margin: 0 auto 420px;
+    
     @include lg-d {
         width: 92%;
         height: 300px;
     }
-
+    
     @include md-d {
+        margin: 0 auto 120px;
         width: 280px;
         height: 300px;
         margin-left: -7.5px;
