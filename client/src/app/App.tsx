@@ -14,6 +14,7 @@ import { Provider } from 'react-redux';
 import store from '../redux/store/index';
 import '../Scss/styles.scss';
 import NotFound from '../pages/NotFound/NotFound.tsx';
+import CorporativeClients from '../pages/CorporativeClients/CorporativeClients';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             <Route path='/aboutUs' element={<AboutUs />}></Route>
             <Route path='/contacts' element={<ContactsPage />}></Route>
             <Route path='/questions' element={<FAQPage />}></Route>
+            <Route path='/corporative-clients' element={<CorporativeClients />}></Route>
             <Route path='/*' element={<NotFound />}></Route>
           </Routes>
         </BrowserRouter>
