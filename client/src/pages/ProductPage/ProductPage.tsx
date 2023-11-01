@@ -16,6 +16,25 @@ import arrowSecond from '../../img/sliderrightarrow.svg';
 import img1 from '../../img/slider1.png';
 
 import Cart from '../../entities/SliderCart/index';
+import { useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addProduct } from '../../redux/slices/Busket.js';
+
+type Product = {
+    id: number;
+    cost: number;
+    title: string;
+    imgs: string[];
+    colors: string[];
+    light: string;
+    format: string;
+    flowers: string[];
+    description: string;
+    categories: string[];
+    topics: string[];
+    createdAt: string;
+    updatedAt: string;
+};
 
 const ProductPage = () => {
     let [margin, setMargin] = React.useState(0);
@@ -42,7 +61,37 @@ const ProductPage = () => {
         setToggle(!toggle);
     }
 
-    const [count, setCount] = React.useState(1)
+    const {id} = useParams();
+    const dispatch = useDispatch();
+
+    const [data, setData] = React.useState<Product>();
+
+    React.useEffect(() => {
+        fetch(`http://localhost:5000/api/products/${id}`).then((res: any) => res.json()).then((res: any) => setData(res))
+    }, [])
+
+    console.log(data);
+
+    let [count, setCount] = React.useState(1)
+
+    function chooseCount(event: React.MouseEvent<HTMLButtonElement>) {
+        if (event.currentTarget.innerText === '+') {
+            setCount(count += 1);
+        } else if (count > 1) { 
+            setCount(count -= 1);
+        };
+    }
+
+    function addToBusket(event: React.MouseEvent<HTMLButtonElement>) {
+        const productInformData = { id: data?.id, cost: data?.cost, ttl: data?.title, count }
+
+        if (!event.currentTarget.classList.contains('btnDisabled')) {
+            event.currentTarget.classList.add('btnDisabled')
+
+            localStorage.BusketInform = JSON.stringify(JSON.parse(localStorage.BusketInform).concat(productInformData));
+            dispatch(addProduct(productInformData));
+        }
+    }
 
     return (
         <div className={styles.page}>
@@ -64,8 +113,8 @@ const ProductPage = () => {
                             </svg>
                             назад
                         </a>
-                        <h2 className={styles.descriptionTtl}>рубиновые искры</h2>
-                        <h2 className={styles.cost}>167.00 p</h2>
+                        <h2 className={styles.descriptionTtl}>{data?.title}</h2>
+                        <h2 className={styles.cost}>{data?.cost} p</h2>
                         <p className={styles.structure}>
                             <strong>Состав:</strong> Гвоздика (Диантус), Леукодендрон, Леукоспермум (Нутан), Лотос, Роза
                         </p>
@@ -80,12 +129,12 @@ const ProductPage = () => {
                         </p>
 
                         <div className={styles.buyInterface}>
-                            <button className='whiteBtn'>В корзину</button>
+                            <button className='whiteBtn' onClick={addToBusket}>В корзину</button>
 
                             <div className={styles.counter}>
-                                <button className={styles.minus}>–</button>
+                                <button className={styles.minus} onClick={chooseCount}>–</button>
                                 <div className={styles.count}>{count}</div>
-                                <button className={styles.plus}>+</button>
+                                <button className={styles.plus} onClick={chooseCount}>+</button>
                             </div>
                         </div>
                     </div>

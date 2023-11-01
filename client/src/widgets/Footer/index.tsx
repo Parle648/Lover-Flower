@@ -44,11 +44,11 @@ const index = () => {
                     </ul>
                 </div>
                 <div className={styles.item}>
-                   <Link className={styles.greenLink} to='/'>Доставка и оплата </Link>
-                   <Link className={styles.greenLink} to='/'>О нас</Link>
-                   <Link className={styles.greenLink} to='/'>FAQ</Link>
-                   <Link className={styles.greenLink} to='/'>Контакты</Link>
-                   <Link className={styles.greenLink} to='/'>для корпоративных клиентов</Link>
+                   <Link className={styles.greenLink} to='/delivery'>Доставка и оплата </Link>
+                   <Link className={styles.greenLink} to='/aboutus'>О нас</Link>
+                   <Link className={styles.greenLink} to='/questions'>FAQ</Link>
+                   <Link className={styles.greenLink} to='/contacts'>Контакты</Link>
+                   <Link className={styles.greenLink} to='/corporative-clients'>для корпоративных клиентов</Link>
                 </div>
                 <div className={styles.item}>
                 <a className={`uppercase Oswald400 green ${styles.mail}`} href="#!">zakaz@loverflower.by</a>

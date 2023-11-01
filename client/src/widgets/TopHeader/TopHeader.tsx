@@ -28,11 +28,11 @@ const TopHeader = () => {
                     <div className={`${styles.mobileBlock} ${disabled && styles.mobileBlockActive}`}>
                         <img className={styles.cross} src={cross} alt="cross" onClick={toggleMenu}/>
                         
-                        <Link to='/'><Logo /></Link>
+                        <Logo />
                         <nav className={`${styles.mobileList}`}>
                             <ul className={`${styles.navigationList} flex justify-between`}>
                                 <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><a href='/'>Главная</a></li>
-                                <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><a href='../../pages/Catalog/Catalog.tsx'>Каталог</a></li>
+                                <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><a href='/catalog'>Каталог</a></li>
                                 <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><a href='/delivery'>Доставка и оплата</a></li>
                                 <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><a href='/aboutUs'>О нас</a></li>
                                 <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><a href='/contacts'>Контакты</a></li>
