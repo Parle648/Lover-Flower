@@ -15,6 +15,7 @@ const DeliveryPage = () => {
             <TopHeader/>
             <img className={styles.background} src={document.body.clientWidth > 800 ? background : backgroundMobile} alt="" />
             <div className={`${styles.wrapper} wrapper`}>
+                <span className={styles.navLink}><a href='/'>Главная </a> / <a href='/delivery'>доставка и оплката</a></span>
                 
                 <h2 className={styles.ttl}>доставка</h2>
                 <h2 className={styles.secondTtl}>и оплата</h2>

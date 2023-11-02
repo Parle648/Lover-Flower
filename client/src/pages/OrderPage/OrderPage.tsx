@@ -35,6 +35,7 @@ const OrderPage = () => {
             <img className={styles.background} src={document.body.clientWidth > 800 ? background : backgroundMobile} alt="" />
 
             <div className="wrapper">
+                <span className={styles.navLink}><a href='/'>Главная </a> / <a href='/order'>оформление заказа</a></span>
                 <h2 className={styles.ttl}>оформление</h2>
                 <h2 className={styles.secondTtl}>заказа</h2>
 

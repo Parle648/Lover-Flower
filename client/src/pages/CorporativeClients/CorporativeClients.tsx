@@ -15,6 +15,8 @@ const CorporativeClients = () => {
             <img className={styles.background} src={document.body.clientWidth > 800 ? background : backgroundMobile} alt="background" />
 
             <div className={styles.wrapper}>
+                <span className={styles.navLink}><a href='/'>Главная </a> / <a href='/corporative-clients'>корпоративным клиентам</a></span>
+
                 <h2 className={styles.ttl}>Букеты</h2>
                 <h2 className={styles.subttl}>поздравления для</h2>
                 <h2 className={styles.subTtlSecond}>Ваших работников</h2>

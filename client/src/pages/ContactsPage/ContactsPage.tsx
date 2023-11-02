@@ -16,6 +16,7 @@ const ContactsPage = () => {
                 <img className={styles.background} src={document.body.clientWidth > 800 ? background : backgroundMobile} alt="background" />
 
                 <div className={styles.wrapper}>
+                    <span className={styles.navLink}><a href='/'>Главная </a> / <a href='/contacts'>контакты</a></span>
                     <h2 className={styles.mainTtl}>контакты</h2>
 
                     <div className={styles.aditionalOptions}>

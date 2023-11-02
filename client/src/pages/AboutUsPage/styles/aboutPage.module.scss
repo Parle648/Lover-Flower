@@ -263,3 +263,19 @@
     }
 
 }
+
+
+.navLink {
+    color: #FFF;
+    font-family: 'Oswald';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.48px;
+    text-transform: uppercase;   
+    
+    & a:hover {
+        color: #555;
+    }
+}

@@ -16,6 +16,7 @@ const AboutUs = () => {
         <img className={styles.background} src={document.body.clientWidth > 800 ? background : backgroundModile} alt="background" />
 
         <div className={styles.wrapper}>
+            <span className={styles.navLink}><a href='/'>главная</a> / <a href='/aboutUs'>о нас</a></span>
             <h2 className={styles.mainTtl}>о нас</h2>
             <h2 className={styles.shopTtl}>Lover <br /> flower</h2>
 

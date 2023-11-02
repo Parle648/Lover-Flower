@@ -31,6 +31,7 @@ const FAQPage = () => {
             <TopHeader />
             <img className={styles.background} src={background} alt="" />
             <div className={styles.wrapper}>
+                <span className={styles.navLink}><a href='/'>Главная </a> / <a href='/questions'>faq</a></span>
                 <h2 className={styles.ttl}>faq</h2>
 
                 <div className={styles.questionBlock}>
