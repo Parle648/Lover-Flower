@@ -16,8 +16,6 @@ class productController {
         try {
             const {types, props, sortBy} = req.body;
 
-            console.log(types, props, sortBy);
-
             const products = await Products.findAll();
             let result;
 

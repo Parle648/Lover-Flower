@@ -36,9 +36,10 @@ const Buskets = sequelize.define('Busket', {
 
 const Reviews = sequelize.define('Review', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    rating: {type: DataTypes.INTEGER, allowNull: false,},
     review: {type: DataTypes.STRING, allowNull: false,},
-    date: {type: DataTypes.STRING, allowNull: false,},
+    name: {type: DataTypes.STRING, allowNull: false,},
+    mail: {type: DataTypes.STRING, allowNull: false,},
+    rating: {type: DataTypes.INTEGER, allowNull: false,},
     ProductId: {type: DataTypes.INTEGER},
 })
 

@@ -457,6 +457,8 @@
     border: 1px solid #555;
     color: #555;
 
+    outline: none;
+
     @include md-d {
         width: 92%;
     }
@@ -526,4 +528,54 @@
         flex-direction: column;
         align-items: center;
     }
+}
+
+//stars
+
+.stars {
+    width: 136px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+//@at-root
+
+.laps {
+    color: #43FFD2;
+    font-family: 'Oswald';
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+.review {
+    max-width: 539px;
+
+    color: #FFF;
+    font-family: 'Oswald';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.32px;
+
+    @include md-d {
+        font-size: 14px;
+    }
+}
+
+.name {
+    color: #555;
+    font-family: 'Oswald';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.28px;
+
+    margin-bottom: 40px;
 }
