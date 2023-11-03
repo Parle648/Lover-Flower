@@ -20,6 +20,8 @@ import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addProduct } from '../../redux/slices/Busket.js';
 import { useForm } from 'react-hook-form';
+import Rating from '../../features/Rating/Rating';
+import ReviewBlock from '../../widgets/ReviewBlock/ReviewBlock';
 
 type Product = {
     id: number;
@@ -93,49 +95,26 @@ const ProductPage = () => {
     }
 
     //
-    const [reviews, setReviews] = React.useState([]);
-    const { control, register, handleSubmit } = useForm();
-    const [rating, setRating]= React.useState(1);
+    // const { control, register, handleSubmit } = useForm();
+    // const [rating, setRating]= React.useState(1);
 
-    React.useEffect(() => {
-        fetch('http://localhost:5000/api/reviews').then((res: any) => res.json()).then((res: any) => setReviews(res))
-    }, [])
+    // React.useEffect(() => {
+    //     fetch('http://localhost:5000/api/reviews').then((res: any) => res.json()).then((res: any) => setReviews(res))
+    // }, [])
 
-    function addRating(event: React.MouseEvent<HTMLButtonElement>) {
-        const stars = document.querySelectorAll('.star');
-        const index = Array.from(stars).indexOf(event.currentTarget);
+    // function sendReview(data: any) {
+    //     data.rating = rating;
+    //     data.ProductId = Number(id?.slice(1));
 
-        setRating(index + 1);
-    }
-
-    function mouseMove(event: React.MouseEvent<HTMLButtonElement>) {
-        const stars = document.querySelectorAll('.star');
-        for (let i = 0; i < stars.length; i++) {
-            const star = stars[i] as HTMLButtonElement;
-
-            if (i < Array.from(stars).indexOf(event.currentTarget)) {
-                star.firstElementChild?.firstElementChild?.setAttribute('fill', '#FCFF50');
-            } else if (i > Array.from(stars).indexOf(event.currentTarget)) {
-                star.firstElementChild?.firstElementChild?.setAttribute('fill', 'white');
-            } else {
-                star.firstElementChild?.firstElementChild?.setAttribute('fill', '#FCFF50');
-            }
-        }
-    }
-
-    function sendReview(data: any) {
-        data.rating = rating;
-        data.ProductId = Number(id?.slice(1));
-
-        fetch('http://localhost:5000/api/reviews', {
-            method: 'post',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        }).then((res: any) => res.json())
-        .then((res: any) => console.log(res))
-    }
+    //     fetch('http://localhost:5000/api/reviews', {
+    //         method: 'post',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //         },
+    //         body: JSON.stringify(data),
+    //     }).then((res: any) => res.json())
+    //     .then((res: any) => console.log(res))
+    // }
 
     return (
         <div className={styles.page}>
@@ -254,61 +233,10 @@ const ProductPage = () => {
                     </ul>
                 </div> :
                 <div className={styles.comments}>
-                    <h2 className={styles.greensubttl}>Будьте первым, кто оставил отзыв на “Рубиновые искры”</h2>
+                    {/* <h2 className={styles.greensubttl}>Будьте первым, кто оставил отзыв на “Рубиновые искры”</h2>
                     <h2 className={styles.subttl}>Ваш адрес email не будет опубликован. Обязательные поля помечены *</h2>
-                    <br />
-
-                    <div className="">
-                        {reviews && reviews.map((elem: any) => {
-                            return (
-                                <div className="">
-                                    <h2 className={styles.laps}>"</h2>
-                                    <h2 className={styles.review}>{elem.review}</h2>
-                                    <h2 className={styles.name}>{elem.name}, date</h2>
-                                </div>
-                            )
-                        })}
-                    </div>
-
-                    <form onSubmit={handleSubmit(sendReview)}>
-                        <h2 className={styles.inputTtl}>Ваш отзыв*</h2>
-                        <input className={styles.input} type="text" placeholder='Введите комментарий' {...register("review")}/>
-                        <h2 className={styles.inputTtl}>Имя*</h2>
-                        <input className={styles.input} type="text" placeholder='Введите ваше имя' {...register("name")}/>
-                        <h2 className={styles.inputTtl}>E-mail*</h2>
-                        <input className={styles.input} type="text" placeholder='Введите вашу почту' {...register("mail")}/>
-                        <div className={styles.stars}>
-                            <span className='star' onMouseMove={mouseMove} onClick={addRating}>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M12.86 10.442L11 6.06L9.13796 10.447L4.39496 10.862L7.99096 13.989L6.92096 18.629L11.006 16.174L15.086 18.626L14.015 13.982L17.608 10.859L12.86 10.443V10.442ZM16.591 20.695L11.006 17.339L5.41596 20.698L6.88196 14.348L1.95996 10.07L8.45096 9.503L11 3.5L13.546 9.498L20.042 10.067L15.124 14.342L16.591 20.695Z" fill="white"/>
-                                </svg>
-                            </span>
-                            <span className='star' onMouseMove={mouseMove} onClick={addRating}>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M12.86 10.442L11 6.06L9.13796 10.447L4.39496 10.862L7.99096 13.989L6.92096 18.629L11.006 16.174L15.086 18.626L14.015 13.982L17.608 10.859L12.86 10.443V10.442ZM16.591 20.695L11.006 17.339L5.41596 20.698L6.88196 14.348L1.95996 10.07L8.45096 9.503L11 3.5L13.546 9.498L20.042 10.067L15.124 14.342L16.591 20.695Z" fill="white"/>
-                                </svg>
-                            </span>
-                            <span className='star' onMouseMove={mouseMove} onClick={addRating}>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M12.86 10.442L11 6.06L9.13796 10.447L4.39496 10.862L7.99096 13.989L6.92096 18.629L11.006 16.174L15.086 18.626L14.015 13.982L17.608 10.859L12.86 10.443V10.442ZM16.591 20.695L11.006 17.339L5.41596 20.698L6.88196 14.348L1.95996 10.07L8.45096 9.503L11 3.5L13.546 9.498L20.042 10.067L15.124 14.342L16.591 20.695Z" fill="white"/>
-                                </svg>
-                            </span>
-                            <span className='star' onMouseMove={mouseMove} onClick={addRating}>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M12.86 10.442L11 6.06L9.13796 10.447L4.39496 10.862L7.99096 13.989L6.92096 18.629L11.006 16.174L15.086 18.626L14.015 13.982L17.608 10.859L12.86 10.443V10.442ZM16.591 20.695L11.006 17.339L5.41596 20.698L6.88196 14.348L1.95996 10.07L8.45096 9.503L11 3.5L13.546 9.498L20.042 10.067L15.124 14.342L16.591 20.695Z" fill="white"/>
-                                </svg>
-                            </span>
-                            <span className='star' onMouseMove={mouseMove} onClick={addRating}>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M12.86 10.442L11 6.06L9.13796 10.447L4.39496 10.862L7.99096 13.989L6.92096 18.629L11.006 16.174L15.086 18.626L14.015 13.982L17.608 10.859L12.86 10.443V10.442ZM16.591 20.695L11.006 17.339L5.41596 20.698L6.88196 14.348L1.95996 10.07L8.45096 9.503L11 3.5L13.546 9.498L20.042 10.067L15.124 14.342L16.591 20.695Z" fill="white"/>
-                                </svg>
-                            </span>
-                        </div>
-                        <br />
-                        <button className='greenBtn'>отправить</button>
-
-                        <h2 className={styles.policy}>Нажимая  на кнопку «Отправить», я даю свое согласие на обработку персональных данных, в соответствии с <span className={styles.pink}>Политикой конфиденциальности</span></h2>
-                    </form>
+                    <br /> */}
+                    <ReviewBlock id={`${id}`} />
                 </div>
             }
 
