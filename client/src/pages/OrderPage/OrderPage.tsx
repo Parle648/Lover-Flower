@@ -55,7 +55,7 @@ const OrderPage = () => {
             body: JSON.stringify(data),
         }).then((responce: any) => responce.json())
         .then((result: any) => {
-            localStorage.setItem('BusketInfrom', JSON.stringify([]));
+            localStorage.BusketInform = JSON.stringify([]);
             window.location.assign('/paysuccess')
         })
         .catch(() => {
