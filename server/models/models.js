@@ -28,11 +28,11 @@ const OrderCall = sequelize.define('Calls', {
     number: {type: DataTypes.STRING, unique: true},
 })
 
-const Buskets = sequelize.define('Busket', {
-    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    OrderId: {type: DataTypes.INTEGER},
-    count: {type: DataTypes.INTEGER},
-})
+// const Buskets = sequelize.define('Busket', {
+//     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+//     OrderId: {type: DataTypes.INTEGER},
+//     count: {type: DataTypes.INTEGER},
+// })
 
 const Reviews = sequelize.define('Review', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
@@ -45,7 +45,6 @@ const Reviews = sequelize.define('Review', {
 
 const Orders = sequelize.define('Order', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    BusketId: {type: DataTypes.INTEGER},
     name: {type: DataTypes.STRING},
     number: {type: DataTypes.STRING, unique: true},
     mail: {type: DataTypes.STRING, unique: true},
@@ -60,18 +59,13 @@ const Orders = sequelize.define('Order', {
     office: {type: DataTypes.STRING},
     deliveryTime: {type: DataTypes.STRING},
     paymentTime: {type: DataTypes.STRING},
+    orderedProducts: {type: DataTypes.STRING, allowNull: false}
 })
 
-module.exports = { Products, Reviews, Orders, OrderCall, Buskets, HaveAQuestions };
+module.exports = { Products, Reviews, Orders, OrderCall, HaveAQuestions };
 
 Products.hasMany(Reviews);
 Reviews.belongsTo(Products);
 
-Products.hasOne(Buskets);
-Buskets.belongsTo(Products);
-
 Products.hasMany(Reviews);
 Reviews.belongsTo(Products);
-
-Orders.hasMany(Buskets);
-Buskets.belongsTo(Orders);

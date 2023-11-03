@@ -52,7 +52,7 @@ const Basket = () => {
                         <span className={styles.green}>Предварительный итог: {amount} руб.</span> <br />
                         Чтобы узнать стоимость доставки, перейдите к оформлению заказа.
                     </p>
-                    <button className={styles.btn}>Оформить заказ</button>
+                    <a href="/order"><button className={styles.btn}>Оформить заказ</button></a>
                 </div>
             </div>
         </div>

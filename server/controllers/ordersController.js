@@ -2,7 +2,6 @@ const { json } = require('sequelize');
 const {Orders} = require('../models/models');
 
 class ordersController {
-
     async setOrder(req, res) {
         try {
             const data = req.body;
