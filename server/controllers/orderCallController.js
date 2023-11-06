@@ -6,6 +6,7 @@ class orderCallController {
     async setCall(req, res) {
         try {
             const data = req.body;
+            console.log(data);
             const call = await OrderCall.create(data);
             return res.json(call);
         } catch(err) {

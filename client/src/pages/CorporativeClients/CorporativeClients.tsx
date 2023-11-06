@@ -7,8 +7,32 @@ import background from '../../img/corporative-client-background.png';
 import backgroundMobile from '../../img/corporative-client-background-mobile.png';
 
 import { Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 
 const CorporativeClients = () => {
+
+    const {
+        register, 
+        handleSubmit,
+        reset,
+    } = useForm()
+
+    function sendOrder(data: any) {
+        
+        fetch('http://localhost:5000/api/corporative-clients', {
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        }).then((response: any) => response.json())
+        .then((result: any) => console.log(result))
+        .catch((err: any) => {
+            console.log(err);
+        }); 
+
+        reset();
+    }
     return (
         <div className={styles.block}>
             <TopHeader />
@@ -108,40 +132,40 @@ const CorporativeClients = () => {
             
                 <h2 className={styles.formTtl}>заполните заявку:</h2>
 
-                <form className={styles.form} action="">
+                <form className={styles.form} onSubmit={handleSubmit(sendOrder)}>
                     <h2 className={styles.inputTtl}>Наименование организации</h2>
-                    <input className={styles.input} type="text" placeholder='Введите наименование вашей организации'/>
+                    <input className={styles.input} type="text" placeholder='Введите наименование вашей организации' {...register('organisationName')}/>
                     
                     <h2 className={styles.inputTtl}>Почтовый адрес</h2>
-                    <input className={styles.input} type="text" placeholder='Введите почтовый адрес'/>
+                    <input className={styles.input} type="text" placeholder='Введите почтовый адрес' {...register('mailIndex')}/>
 
                     <h2 className={styles.inputTtl}>Контактное лицо</h2>
-                    <input className={styles.input} type="text" placeholder='Введите имя контактного лица'/>
+                    <input className={styles.input} type="text" placeholder='Введите имя контактного лица' {...register('contactPerson')}/>
 
                     <h2 className={styles.inputTtl}>Контактный номер телефона</h2>
-                    <input className={styles.input} type="text" placeholder='+7 (977) 777-77-77'/>
+                    <input className={styles.input} type="text" placeholder='+7 (977) 777-77-77' {...register('contactNumber')}/>
 
                     <h2 className={styles.inputTtl}>Стоимость букета сотруднику (если разная – указать)</h2>
-                    <input className={styles.input} type="text" placeholder='Укажите стоимость букета сотруднику'/>
+                    <input className={styles.input} type="text" placeholder='Укажите стоимость букета сотруднику' {...register('busketAmount')}/>
 
                     <h2 className={styles.inputTtl}>Адрес электронной почты</h2>
-                    <input className={styles.input} type="text" placeholder='Укажите ваш адрес электронной почты'/>
+                    <input className={styles.input} type="text" placeholder='Укажите ваш адрес электронной почты' {...register('emailAdress')}/>
 
                     <h2 className={styles.inputTtl}>УНП</h2>
-                    <input className={styles.input} type="text" placeholder='УНП'/>
+                    <input className={styles.input} type="text" placeholder='УНП' {...register('YNP')}/>
 
                     <h2 className={styles.inputTtl}>Расчетный счет</h2>
-                    <input className={styles.input} type="text" placeholder='Введите номер расчетного счета'/>
+                    <input className={styles.input} type="text" placeholder='Введите номер расчетного счета' {...register('currentAccount')}/>
                     
                     <h2 className={styles.inputTtl}>Код банка</h2>
-                    <input className={styles.input} type="text" placeholder='Код банка'/>
+                    <input className={styles.input} type="text" placeholder='Код банка' {...register('bankCode')}/>
 
                     <h2 className={styles.inputTtl}>Предполагаемое количество заявок в месяц</h2>
-                    <input className={styles.input} type="text" placeholder='Введите предполагаемое количество заявок в месяц'/>
+                    <input className={styles.input} type="text" placeholder='Введите предполагаемое количество заявок в месяц' {...register('countOfOrders')}/>
 
+                    <button className='greenBtn'>отправить</button>
                 </form>
 
-                <button className='greenBtn'>отправить</button>
                 <p className={styles.policy}>
                     Нажимая  на кнопку «Отправить», я даю свое согласие на обработку персональных данных, в соответствии c <Link className={styles.link} to='/'>Политикой конфиденциальности</Link>
                 </p>

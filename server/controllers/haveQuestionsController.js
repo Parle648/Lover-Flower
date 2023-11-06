@@ -1,12 +1,12 @@
 const { json } = require('sequelize');
-const {HaveAQuestions} = require('../models/models');
+const {CorporativeClients} = require('../models/models');
 
 class questionController {
 
     async setquestion(req, res) {
         try {
             const data = req.body;
-            const question = await HaveAQuestions.create(data);
+            const question = await CorporativeClients.create(data);
             return res.json(question);
         } catch(err) {
             return json(`${err}`)

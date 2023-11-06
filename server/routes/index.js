@@ -9,7 +9,7 @@ const productRouter = require('./productsRouter');
 const reviewsRouter = require('./reviewsRouter');
 
 router.use('/products', productRouter);
-router.use('/questions', haveQuestions);
+router.use('/corporative-clients', haveQuestions);
 router.use('/call', orderCall);
 router.use('/busket', busketRouter);
 router.use('/reviews', reviewsRouter);

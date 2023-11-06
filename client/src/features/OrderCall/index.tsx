@@ -26,9 +26,11 @@ const CallOrder = () => {
                 <p className={styles.paragraph}>
                     Впишите свои данные, и мы свяжемся с Вами. Ваши данные ни при каких обстоятельствах не будут переданы третьим лицам.
                 </p>
-                <input className={`${styles.input} greenInput`} type="text" placeholder='Ваше имя'/> <br />
-                <input className={`${styles.input} greenInput`} type="number" placeholder='+7 (977) 777-77-77'/> <br />
-                <button className={`${styles.btn} greenBtn`}>отправить</button>
+                <form>
+                    <input className={`${styles.input} greenInput`} type="text" placeholder='Ваше имя'/> <br />
+                    <input className={`${styles.input} greenInput`} type="number" placeholder='+7 (977) 777-77-77'/> <br />
+                    <button className={`${styles.btn} greenBtn`}>отправить</button>
+                </form>
             </div>
         </div>
     );

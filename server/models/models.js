@@ -15,24 +15,26 @@ const Products = sequelize.define('Products', {
     topics: {type: DataTypes.ARRAY(DataTypes.STRING), allowNull: false,},
 })
 
-const HaveAQuestions = sequelize.define('Questions', {
+const CorporativeClients = sequelize.define('CorporativeClients', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    name: {type: DataTypes.STRING},
-    number: {type: DataTypes.STRING, unique: true},
-    comment: {type: DataTypes.STRING},
+    organisationName: {type: DataTypes.STRING, allowNull: false},
+    mailIndex: {type: DataTypes.STRING, allowNull: false},
+    contactPerson: {type: DataTypes.STRING, allowNull: false},
+    contactNumber: {type: DataTypes.STRING, allowNull: false},
+    busketAmount: {type: DataTypes.STRING, allowNull: false},
+    emailAdress: {type: DataTypes.STRING, allowNull: false},
+    YNP: {type: DataTypes.STRING, allowNull: false},
+    currentAccount: {type: DataTypes.STRING, allowNull: false},
+    bankCode: {type: DataTypes.STRING, allowNull: false},
+    countOfOrders: {type: DataTypes.STRING, allowNull: false},
 })
 
 const OrderCall = sequelize.define('Calls', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     name: {type: DataTypes.STRING},
+    message: {type: DataTypes.STRING},
     number: {type: DataTypes.STRING, unique: true},
 })
-
-// const Buskets = sequelize.define('Busket', {
-//     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-//     OrderId: {type: DataTypes.INTEGER},
-//     count: {type: DataTypes.INTEGER},
-// })
 
 const Reviews = sequelize.define('Review', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
@@ -62,7 +64,7 @@ const Orders = sequelize.define('Order', {
     orderedProducts: {type: DataTypes.STRING, allowNull: false}
 })
 
-module.exports = { Products, Reviews, Orders, OrderCall, HaveAQuestions };
+module.exports = { Products, Reviews, Orders, OrderCall, CorporativeClients };
 
 Products.hasMany(Reviews);
 Reviews.belongsTo(Products);
