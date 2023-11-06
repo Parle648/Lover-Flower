@@ -121,6 +121,20 @@ class productController {
             return json(`${err}`)
         }
     }
+
+    async getProductByString(req, res) {
+        try {
+            const {string} = req.params;
+            const prodArray = await Products.findAll({
+                where: {
+                    'title': string.slice(1),
+                }
+            })
+            return res.json(prodArray);
+        } catch(err) {
+            return json(`${err}`)
+        }
+    }
     
     async setProduct(req, res) {
         try {
