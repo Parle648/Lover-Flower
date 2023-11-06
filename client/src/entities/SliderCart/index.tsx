@@ -26,6 +26,14 @@ const Index = ({id, img, ttl, cost}: CartType) => {
 
     }
 
+    const [disabled, setDisabled] = React.useState(false)
+
+    React.useEffect(() => {
+        if (JSON.parse(localStorage.BusketInform).some((obj: any) => obj.id === id)) {
+            setDisabled(true)
+        }
+    }, [])
+
     return (
         <div className={styles.block} id={`${id}`}>
             <a href={`/catalog/:${id}`}>
@@ -33,7 +41,7 @@ const Index = ({id, img, ttl, cost}: CartType) => {
                 <h2 className={styles.ttl}>{ttl}</h2>
                 <h2 className={styles.cost}>{cost}</h2>
             </a>    
-            <button className={`whiteBtn`} onClick={updateStore}>В корзину</button>
+            <button className={`whiteBtn ${disabled && 'btnDisabled'}`} onClick={updateStore}>В корзину</button>
         </div>
     );
 };

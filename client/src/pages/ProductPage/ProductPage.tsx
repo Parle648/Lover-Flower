@@ -95,26 +95,15 @@ const ProductPage = () => {
     }
 
     //
-    // const { control, register, handleSubmit } = useForm();
-    // const [rating, setRating]= React.useState(1);
+    const [disabled, setDisabled] = React.useState(false)
 
-    // React.useEffect(() => {
-    //     fetch('http://localhost:5000/api/reviews').then((res: any) => res.json()).then((res: any) => setReviews(res))
-    // }, [])
-
-    // function sendReview(data: any) {
-    //     data.rating = rating;
-    //     data.ProductId = Number(id?.slice(1));
-
-    //     fetch('http://localhost:5000/api/reviews', {
-    //         method: 'post',
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //         },
-    //         body: JSON.stringify(data),
-    //     }).then((res: any) => res.json())
-    //     .then((res: any) => console.log(res))
-    // }
+    React.useEffect(() => {
+        console.log();
+        
+        if (JSON.parse(localStorage.BusketInform).some((obj: any) => obj.id === Number(id?.slice(1)))) {
+            setDisabled(true)
+        }
+    }, [])
 
     return (
         <div className={styles.page}>
@@ -152,7 +141,7 @@ const ProductPage = () => {
                         </p>
 
                         <div className={styles.buyInterface}>
-                            <button className='whiteBtn' onClick={addToBusket}>В корзину</button>
+                            <button className={`whiteBtn ${disabled && 'btnDisabled'}`} onClick={addToBusket}>В корзину</button>
 
                             <div className={styles.counter}>
                                 <button className={styles.minus} onClick={chooseCount}>–</button>
@@ -233,9 +222,6 @@ const ProductPage = () => {
                     </ul>
                 </div> :
                 <div className={styles.comments}>
-                    {/* <h2 className={styles.greensubttl}>Будьте первым, кто оставил отзыв на “Рубиновые искры”</h2>
-                    <h2 className={styles.subttl}>Ваш адрес email не будет опубликован. Обязательные поля помечены *</h2>
-                    <br /> */}
                     <ReviewBlock id={`${id}`} />
                 </div>
             }
