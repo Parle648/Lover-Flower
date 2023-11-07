@@ -1,3 +1,5 @@
+@import '../../../Scss/global/global.scss';
+
 .block {
     width: 68px;
     display: flex;
@@ -35,16 +37,16 @@
 
 .ressultContainer {
     background: #040A0A;
-    width: 100%;
+    width: 100vw;
     height: 1361px;
     position: absolute;
     transform: translate(-50%, -110%);
     left: 50%;
-    z-index: -1;
+    z-index: 999;
 
     transition: .35s;
 
-    padding: 0 15%;
+    padding: 0 3%;
 }
 
 
@@ -69,6 +71,35 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+
+    width: 1110px;
+    height: 500px;
+
+    overflow: scroll;
+    overflow-x: hidden;
+
+    @include lg-d {
+        width: 92%;
+    }
+
+    &::-webkit-scrollbar {
+        width: 6px; /* Задає ширину кільця прокрутки */
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background-color: #43FFD2; /* Колір кільця прокрутки */
+        border-radius: 6px; /* Закруглені кути для кільця прокрутки */
+        width: 10px;
+    }
+    
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: #040A0A; /* Колір кільця прокрутки при наведенні миші */
+    }
+    
+    /* Стилізація фону прокрутки */
+    &::-webkit-scrollbar-track {
+        background-color: #040A0A; /* Колір кільця прокрутки при наведенні миші */
+    }
 
     width: 1110px;
     margin: 0 auto;

@@ -1,11 +1,12 @@
 @import '../../../Scss/global/global.scss';
 
 .header {
-    width: 1109px;
+    width: 1269px;
     top: 22px;
     left: 50%;
     transform: translate(-50%, 0);
     position: absolute;
+    z-index: 999;
     transition: .35s;
 
     @include xl-d {
@@ -96,7 +97,7 @@
 }
 
 .navigationList {
-    width: 612px;
+    width: 512px;
     margin-left: -77px;
 
     @include md-d {

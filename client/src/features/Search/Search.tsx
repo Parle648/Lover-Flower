@@ -14,12 +14,17 @@ const Search = () => {
 
     function openSearch(event: React.MouseEvent<HTMLElement>) {
         setDisabled(true);
+
+        document.body.style.overflow = 'hidden';
     };
+    
     function closeSearch(event: any) {
-        event.preventDefault()
+        event.preventDefault();
         setDisabled(false);
-        setValue('')
-        setproducts([])
+        setValue('');
+        setproducts([]);
+        
+        document.body.style.overflow = '';
     };
 
     function inputString(event: any) {
