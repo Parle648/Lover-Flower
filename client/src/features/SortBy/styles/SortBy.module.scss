@@ -1,7 +1,8 @@
 @import '../../../Scss/global/global.scss';
 
 .block {
-    z-index: 9;
+    z-index: 99;
+    position: relative;
 
     @include md-d {
         position: relative;
@@ -42,6 +43,7 @@
 
 .body {
     display: none;
+    position: absolute;
 }
 
 .bodyActive {

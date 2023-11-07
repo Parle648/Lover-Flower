@@ -31,6 +31,7 @@ const TopHeader = () => {
                         <Logo />
                         <nav className={`${styles.mobileList}`}>
                             <ul className={`${styles.navigationList} flex justify-between`}>
+                                <Search />
                                 <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><a href='/'>Главная</a></li>
                                 <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><a href='/catalog'>Каталог</a></li>
                                 <li className={`${styles.link} text-sm Oswald400 gray uppercase cursor-pointer`}><a href='/delivery'>Доставка и оплата</a></li>

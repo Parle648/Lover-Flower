@@ -36,7 +36,7 @@ const CatalogHero = () => {
             <img className={styles.background} src={document.body.clientWidth >= 800 ? backgr : backgrModile} alt="asdas" />
             <CallOrder />
             {scroll > 500 && <TopHeader />}
-            <Header />
+            {document.body.clientWidth > 800 ? <Header /> : <TopHeader />}
             {document.body.clientWidth <= 800 &&
                 <div>
                     <div className={styles.openPropsSort}>

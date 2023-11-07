@@ -34,6 +34,14 @@ const SortBy = () => {
         } catch (err) {
             console.error(err)
         }
+
+        console.log(document.querySelector(`${styles.headTtl}`));
+        
+
+        // const choosedSort = document.querySelector(styles.headTtl).innerText
+
+        // document.querySelector(styles.headTtl).innerText = event.currentTarget.innerText
+        // event.currentTarget.innerText = choosedSort
     };
    
     return (
