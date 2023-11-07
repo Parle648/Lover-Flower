@@ -21,6 +21,7 @@
 }
 
 .wrapper {
+    width: 1328px;
     position: absolute;
     top: 100px;
     left: 50%;
@@ -118,7 +119,7 @@
 
 .sendUsBlock {
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
     justify-content: space-between;
 
     @include lg-d {
@@ -151,6 +152,7 @@
     text-transform: uppercase;
 
     width: 275px;
+    padding-top: 106px;
     padding-bottom: 23px;
     position: relative;
 
@@ -162,7 +164,7 @@
         background-color: #43FFD2;
         position: absolute;
         left: 0;
-        top: -54px;
+        top: 31px;
 
         @include lg-d {
             top: 0;
@@ -176,78 +178,6 @@
     @include md-d {
         padding-top: 20px;
     }
-}
-
-//@at-root
-
-.form {
-    padding-top: 83px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    right: 0;
-    position: absolute;
-
-    @include md-d {
-        position: relative;
-        padding-top: 20px;
-    }
-}
-
-.description {
-    width: 255px;
-    margin-bottom: 30px;
-    align-self: end;
-
-    color: #FFF;
-    font-family: 'Oswald';
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 0.56px;
-    text-transform: uppercase;
-
-    padding-top: 53px;
-    border-top: 1px solid #43FFD2;
-}
-
-.input {
-    width: 445px;
-    margin-bottom: 10px;
-
-    @include lg-d {
-        width: 92%;
-    }
-
-    @include md-d {
-        width: 280px;
-    }
-}
-
-.textField {
-    max-height: 120px;
-}
-
-.policy {
-    width: 342px;
-    margin-top: 10px;
-
-    color: #FFF;
-    font-family: 'Roboto';
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 0.2px;
-
-    @include md-d {
-        width: 248px;
-    }
-}
-
-.link {
-    color: #D978AC;
 }
 
 //map

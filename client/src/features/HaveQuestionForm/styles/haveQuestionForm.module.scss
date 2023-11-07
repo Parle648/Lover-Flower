@@ -1,0 +1,69 @@
+@import '../../../Scss/global/global.scss';
+
+.form {
+    width: 500px;
+    padding-top: 83px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include md-d {
+        width: 92%;
+    }
+}
+
+.description {
+    width: 255px;
+    margin-bottom: 30px;
+    align-self: end;
+
+    color: #FFF;
+    font-family: 'Oswald';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.56px;
+    text-transform: uppercase;
+
+    padding-top: 53px;
+    border-top: 1px solid #43FFD2;
+}
+
+.input {
+    width: 445px;
+    margin-bottom: 10px;
+
+    @include lg-d {
+        width: 92%;
+    }
+
+    @include md-d {
+        width: 300px;
+    }
+}
+
+.textField {
+    max-height: 120px;
+}
+
+.policy {
+    width: 342px;
+    margin-top: 10px;
+
+    color: #FFF;
+    font-family: 'Roboto';
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.2px;
+
+    @include md-d {
+        width: 248px;
+    }
+}
+
+.link {
+    color: #D978AC;
+}
