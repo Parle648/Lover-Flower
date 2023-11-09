@@ -276,10 +276,9 @@
 }
 
 .form {
-    height: 635px;
+    height: 637px;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    justify-content: space-between;
 
     margin-bottom: 40px;
 

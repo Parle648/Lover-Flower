@@ -196,3 +196,57 @@ $brackpoints: (
         color: #555;
     }
 }
+
+.input,
+.correctInput,
+.wrongValue,
+.unactive {
+    width: 540px;
+    @include md-d {
+        width: 280px;
+    } 
+
+    height: 60px;
+    border: 1px solid #555;
+
+    color: #555;
+    font-family: 'Oswald';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.56px;
+    background-color: transparent;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.correctInput {
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.wrongValue {
+    display: block;
+    border: 1px solid #FF3A44;
+    color: #FF3A44;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.errorMessage {
+    color: #FF3A44;
+    font-family: 'Oswald';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.56px;
+    background-color: transparent;
+}
+
+.unactive {
+    border: 1px solid #212121;
+    color: #212121;
+}

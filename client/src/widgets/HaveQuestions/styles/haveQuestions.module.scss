@@ -66,3 +66,42 @@
 .secondTtl {
     margin-left: 80px;
 }
+
+.description {
+    color: #FFF;
+    font-family: 'Oswald';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.56px;
+    text-transform: uppercase;
+
+    width: 275px;
+    padding-top: 106px;
+    padding-bottom: 23px;
+    position: relative;
+
+    &::before {
+        content: '';
+
+        width: 255px;
+        height: 1px;
+        background-color: #43FFD2;
+        position: absolute;
+        left: 0;
+        top: 31px;
+
+        @include lg-d {
+            top: 0;
+        }
+    }
+
+    @include lg-d {
+        padding-top: 70px;
+    }
+
+    @include md-d {
+        padding-top: 20px;
+    }
+}

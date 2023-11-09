@@ -2,10 +2,10 @@
 
 .container {
     position: fixed;
-    height: 1000px;
+    height: 1300px;
     top: 90%;
     left: 100px;
-    z-index: 15;
+    z-index: 999;
     transform: translate(0, -50%);
 }
 
@@ -49,8 +49,8 @@
 }
 
 .popUp {
-    width: 540px;
-    height: 445px;
+    width: 640px;
+    height: 529px;
     padding: 30px;
     background-color: #0F2222;
     display: none;
