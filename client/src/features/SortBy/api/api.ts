@@ -11,7 +11,6 @@ type Props = {
 }
 
 export default async function getCurrentProducts ({types, sortBy, props}: Props) {
-
     const bd = JSON.stringify({
         types: types.value, 
         sortBy: sortBy.value, 

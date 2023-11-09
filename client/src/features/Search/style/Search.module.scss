@@ -49,7 +49,6 @@
     padding: 0 3%;
 }
 
-
 .closeActive {
     display: block;
 }
@@ -91,22 +90,21 @@
     }
 
     &::-webkit-scrollbar {
-        width: 6px; /* Задає ширину кільця прокрутки */
+        width: 6px; 
     }
     
     &::-webkit-scrollbar-thumb {
-        background-color: #43FFD2; /* Колір кільця прокрутки */
-        border-radius: 6px; /* Закруглені кути для кільця прокрутки */
+        background-color: #43FFD2; 
+        border-radius: 6px;
         width: 10px;
     }
     
     &::-webkit-scrollbar-thumb:hover {
-        background-color: #040A0A; /* Колір кільця прокрутки при наведенні миші */
+        background-color: #040A0A;
     }
     
-    /* Стилізація фону прокрутки */
     &::-webkit-scrollbar-track {
-        background-color: #040A0A; /* Колір кільця прокрутки при наведенні миші */
+        background-color: #040A0A;
     }
 
     width: 1110px;

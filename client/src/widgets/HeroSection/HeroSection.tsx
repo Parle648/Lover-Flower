@@ -12,7 +12,7 @@ const HeroSection = () => {
 
     document.addEventListener('scroll', () => {
         window.scrollY <= 500 ? setScroll(false) : setScroll(true);
-    })
+    });
     
     return (
         <div className={styles.heroSection}>

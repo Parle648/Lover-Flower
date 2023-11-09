@@ -16,20 +16,18 @@ const CatalogHero = () => {
     const [scroll, setScroll] = React.useState(0);
 
     document.addEventListener('scroll', () => {
-        setScroll(window.scrollY)}
-    )
+        setScroll(window.scrollY);
+    });
 
     React.useEffect(() => {
         document.querySelectorAll(`.${styles.toggleFilter}`).forEach((item: any) => {
-            item?.currentTarget.nextElementSibling?.classList.toggle(styles.filterOpened)
-        })
-    }, [])
+            item?.currentTarget.nextElementSibling?.classList.toggle(styles.filterOpened);
+        });
+    }, []);
 
     function openFilter (event: React.MouseEvent<HTMLButtonElement>) {
-        event.currentTarget.nextElementSibling?.classList.toggle(styles.filterOpened)
-        console.log(event.currentTarget.nextElementSibling);
-        
-    }
+        event.currentTarget.nextElementSibling?.classList.toggle(styles.filterOpened);
+    };
 
     return (
         <div className={styles.block}>

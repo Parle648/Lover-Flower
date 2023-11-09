@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 const HaveQuestionForm = () => {
     const {   
-        control,
         register,
         formState: {errors},
         handleSubmit,
@@ -15,17 +14,23 @@ const HaveQuestionForm = () => {
     });
 
     function orderCall(data: any) {
-        fetch('http://localhost:5000/api/call/', {
-            method: 'post',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        }).then((response: any) => response.json())
-        .then((result: any) => console.log(result));
-
-        reset();
-    }
+        try {
+            fetch('http://localhost:5000/api/call/', {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+            .then((response: any) => response.json())
+            .then((result: any) => console.log(result));
+    
+            reset();
+        } catch (err) {
+            console.error(err);
+        };
+    };
+    
     return (
         <form className={styles.form} onSubmit={handleSubmit(orderCall)}>
             <input  className={`input ${errors?.name && 'wrongValue'}`} type="text" placeholder='Ваше имя' id='' {...register('name', {

@@ -20,8 +20,8 @@ const Rating = ({choosedRating, setRating}: RatingType) => {
                 star.firstElementChild?.firstElementChild?.setAttribute('fill', 'white');
             } else {
                 star.firstElementChild?.firstElementChild?.setAttribute('fill', '#FCFF50');
-            }
-        }
+            };
+        };
     }
 
     function addRating(event: React.MouseEvent<HTMLButtonElement>) {

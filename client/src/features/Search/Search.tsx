@@ -1,20 +1,16 @@
 import React from 'react';
 import styles from './style/Search.module.scss';
-
 import search from '../../img/search.svg';
 import SliderCart from '../../entities/SliderCart/index.tsx';
-
-import img from '../../img/product-img.png'
+import img from '../../img/product-img.png';
 
 const Search = () => {
-
     const [disabled, setDisabled] = React.useState(false);
     const [value, setValue] = React.useState('');
     const [products, setproducts] = React.useState([]);
 
     function openSearch(event: React.MouseEvent<HTMLElement>) {
         setDisabled(true);
-
         document.body.style.overflow = 'hidden';
     };
     
@@ -23,28 +19,29 @@ const Search = () => {
         setDisabled(false);
         setValue('');
         setproducts([]);
-        
         document.body.style.overflow = '';
     };
 
     function inputString(event: any) {
         setValue(event.target.value);
-    }
+    };
 
     function searchByString(event: React.MouseEvent<HTMLElement>) {
-        event.preventDefault()
-        
+        event.preventDefault();
         const string = value.toUpperCase().replaceAll(' ', '%20');
 
-        fetch(`http://localhost:5000/api/products/:${string}`, {
-            method: 'get',
-            headers: {
-                'Content-Type': 'application/json',
-            }
-        }).then((response: any) => response.json())
-        .then((result: any) => setproducts(result))
-
-    }
+        try {
+            fetch(`http://localhost:5000/api/products/:${string}`, {
+                method: 'get',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            }).then((response: any) => response.json())
+            .then((result: any) => setproducts(result))
+        } catch (err) {
+            console.error(err)
+        };
+    };
 
     return (
         <div className={styles.search}>

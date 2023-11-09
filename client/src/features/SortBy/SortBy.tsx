@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './styles/SortBy.module.scss';
 import arrow from '../../img/arrow-sort-by.svg';
-
 import { useDispatch, useSelector } from 'react-redux';
 import { updateValue } from '../../redux/slices/SortBy'; 
 import { update } from '../../redux/slices/Products';
@@ -24,7 +23,7 @@ const SortBy = () => {
         const string = event.currentTarget.innerText;
         const obj = { types, sortBy: {
             value: string
-        }, props }
+        }, props };
 
         try {
             getCurrentproducts(obj)
@@ -33,15 +32,7 @@ const SortBy = () => {
             })
         } catch (err) {
             console.error(err)
-        }
-
-        console.log(document.querySelector(`${styles.headTtl}`));
-        
-
-        // const choosedSort = document.querySelector(styles.headTtl).innerText
-
-        // document.querySelector(styles.headTtl).innerText = event.currentTarget.innerText
-        // event.currentTarget.innerText = choosedSort
+        };
     };
    
     return (

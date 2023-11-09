@@ -28,19 +28,19 @@ const TypeOfFlower = () => {
             })
         } catch (err) {
             console.error(err)
-        }
-    }, [types])
+        };
+    }, [types]);
     
     function updateStore(event: React.MouseEvent<HTMLButtonElement>) {
         event?.currentTarget.classList.toggle(styles.active);
         const type = event?.currentTarget.innerText;
         
         if (event?.currentTarget.classList.contains(`${styles.active}`)) {
-            dispatch(pushType(type))
+            dispatch(pushType(type));
         } else {
-            dispatch(popType(type))
-        }
-    }
+            dispatch(popType(type));
+        };
+    };
 
     return (
         <div className={styles.block}>

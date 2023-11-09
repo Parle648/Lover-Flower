@@ -1,13 +1,11 @@
 import React from 'react';
-
 import { useForm } from 'react-hook-form';
 import Rating from '../../features/Rating/Rating';
-
 import styles from './styles/ReviewBlock.module.scss';
 
 type ReviewsForm = {
     id: string,
-}
+};
 
 const ReviewBlock = ({id}: ReviewsForm) => {
     const { register, handleSubmit } = useForm();
@@ -15,24 +13,26 @@ const ReviewBlock = ({id}: ReviewsForm) => {
     let [rating, setRating]= React.useState(1);
 
     React.useEffect(() => {
-        fetch(`http://localhost:5000/api/reviews/`).then((res: any) => res.json()).then((res: any) => setReviews(res))
+        fetch(`http://localhost:5000/api/reviews/`).then((res: any) => res.json()).then((res: any) => setReviews(res));
     }, []);
 
     function sendReview(data: any) {
         data.rating = rating;
         data.ProductId = Number(id?.slice(1));
 
-        fetch('http://localhost:5000/api/reviews', {
-            method: 'post',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        }).then((res: any) => res.json())
-        .then((res: any) => console.log(res));
+        try {
+            fetch('http://localhost:5000/api/reviews', {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            }).then((res: any) => res.json())
+            .then((res: any) => console.log(res));
+        } catch (err) {
+            console.error(err);
+        };
     };
-
-    console.log(reviews.some((elem: any) => elem.ProductId === Number(id?.slice(1))));
 
     return (
         <div>

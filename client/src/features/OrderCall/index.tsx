@@ -8,8 +8,8 @@ const CallOrder = () => {
     const [visible, setVisible] = React.useState(false);
 
     const openModal = () => {
-        setVisible(!visible)
-    }
+        setVisible(!visible);
+    };
 
     return (
         <div className={styles.container}>

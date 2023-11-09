@@ -34,8 +34,8 @@ const ProductsList = () => {
             })
         } catch (error) {
             console.error(error);
-        }
-    }, [])
+        };
+    }, []);
 
     return (
         <div className={styles.block}>
