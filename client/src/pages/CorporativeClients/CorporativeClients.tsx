@@ -195,11 +195,7 @@ const CorporativeClients = () => {
                         })}/>
                         {errors?.emailAdress && <h2 className='errorMessage'>Будь ласка, введіть правильний адресу електронної пошти</h2>}
 
-                        <button className='greenBtn'>отправить</button>
-                    </div>
-
-
-                    <div>
+                        {document.body.clientWidth < 800 && <div>
                         <h2 className={styles.inputTtl}>Введите УНП</h2>
                         <input className={`input ${errors?.YNP && 'wrongValue'}`} placeholder='УНП' {...register("YNP", {
                             required: true,
@@ -240,7 +236,54 @@ const CorporativeClients = () => {
                         })}/>
                         {errors?.countOfOrders && <h2 className='errorMessage'>Введите предполагаемое количество заявок в месяц</h2>}
 
+                    </div>}
+
+                        <button className='greenBtn'>отправить</button>
                     </div>
+
+
+                        {document.body.clientWidth > 800 && <div>
+                        <h2 className={styles.inputTtl}>Введите УНП</h2>
+                        <input className={`input ${errors?.YNP && 'wrongValue'}`} placeholder='УНП' {...register("YNP", {
+                            required: true,
+                            pattern: {
+                                value: /#\d{6}/,
+                                message: 'Введите правильно название фирмы'
+                            }
+                        })}/>
+                        {errors?.YNP && <h2 className='errorMessage'>Введите УНП</h2>}
+
+                        <h2 className={styles.inputTtl}>Расчетный счет</h2>
+                        <input className={`input ${errors?.currentAccount && 'wrongValue'}`} placeholder='Введите номер расчетного счета' {...register("currentAccount", {
+                            required: true,
+                            pattern: {
+                                value: /^[А-Яа-яЁё\s]+$/,
+                                message: 'Введите правильно название фирмы'
+                            }
+                        })}/>
+                        {errors?.currentAccount && <h2 className='errorMessage'>Введите pасчетный счет</h2>}
+
+                        <h2 className={styles.inputTtl}>Код банка</h2>
+                        <input className={`input ${errors?.bankCode && 'wrongValue'}`} placeholder='Код банка' {...register("bankCode", {
+                            required: true,
+                            pattern: {
+                                value: /^[А-Яа-яЁё\s]+$/,
+                                message: 'Введите правильно название фирмы'
+                            }
+                        })}/>
+                        {errors?.bankCode && <h2 className='errorMessage'>Введите код банка</h2>}
+            
+                        <h2 className={styles.inputTtl}>Предполагаемое количество заявок в месяц</h2>
+                        <input className={`input ${errors?.countOfOrders && 'wrongValue'}`} placeholder='Введите предполагаемое количество заявок в месяц' {...register("countOfOrders", {
+                            required: true,
+                            pattern: {
+                                value: /^[А-Яа-яЁё\s]+$/,
+                                message: 'Введите правильно название фирмы'
+                            }
+                        })}/>
+                        {errors?.countOfOrders && <h2 className='errorMessage'>Введите предполагаемое количество заявок в месяц</h2>}
+
+                    </div>}
                 </form>
                 <p className={styles.policy}>
                     Нажимая  на кнопку «Отправить», я даю свое согласие на обработку персональных данных, в соответствии c <Link className={styles.link} to='/'>Политикой конфиденциальности</Link>

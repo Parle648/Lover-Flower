@@ -28,7 +28,7 @@
 
 .second {    
     width: 446px;
-    margin: -452px 0 0 663px;
+    margin: -570px 0 0 663px;
     & > h2 {
         width: 246px;
     }
@@ -39,7 +39,7 @@
 }
 
 .third {
-    margin: 31px 0 0 568px;
+    margin: -22px 0 0 568px;
     @include lg-d {
         width: 540px;
         margin: 0;
@@ -75,8 +75,8 @@
 }
 
 .paragraph {
-    width: 500px;
-    margin: 0 0 30px 95px;
+    width: 534px;
+    margin: 0 0 32px 95px;
     color: #FFF;
     font-family: 'Oswald';
     font-size: 20px;

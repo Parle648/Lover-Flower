@@ -70,7 +70,7 @@ const ProductPage = () => {
     const [data, setData] = React.useState<Product>();
 
     React.useEffect(() => {
-        fetch(`http://localhost:5000/api/products/${id}`).then((res: any) => res.json()).then((res: any) => setData(res))
+        fetch(`http://localhost:5000/api/products/getproduct/${id}`).then((res: any) => res.json()).then((res: any) => setData(res))
     }, [])
 
     let [count, setCount] = React.useState(1)
@@ -98,19 +98,17 @@ const ProductPage = () => {
     const [disabled, setDisabled] = React.useState(false)
 
     React.useEffect(() => {
-        console.log();
-        
         if (JSON.parse(localStorage.BusketInform).some((obj: any) => obj.id === Number(id?.slice(1)))) {
             setDisabled(true)
         }
     }, [])
 
+    
+
     return (
         <div className={styles.page}>
             <img className={styles.background} src={background} alt="background" />
             <TopHeader />
-
-            {/*  */}
 
                 <div className={styles.productAbout}>
                     <div className={styles.galary}>
@@ -151,8 +149,6 @@ const ProductPage = () => {
                         </div>
                     </div>
                 </div>
-
-            {/*  */}
 
             <h2 className={styles.additionalTtl}>Дополнительно к заказу:</h2>
             <div className={styles.aditionalOptions}>

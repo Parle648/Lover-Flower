@@ -56,10 +56,18 @@
 
 .ressultContainerActive {
     transform: translate(-50%, 20px);
+    
+    @include md-d {
+        transform: translate(-39%, 4px);
+    }
 }
 
 .blockActive {
     width: 366px;
+
+    @include md-d {
+        width: 219px;
+    }
 }
 
 .text:focus + .header {

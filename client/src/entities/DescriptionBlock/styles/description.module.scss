@@ -51,6 +51,7 @@
     letter-spacing: 0.72px;
     text-transform: uppercase;
     position: relative;
+    margin-bottom: 5px;
 
     &:before {
         content: '';
@@ -83,6 +84,6 @@
         display: block;
 
         margin: 18px auto 0 42%;
-        width: 119px;
+        width: 159px;
     }
 }
