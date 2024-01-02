@@ -1,0 +1,370 @@
+@import '../../../Scss/global/global.scss';
+
+.block {
+    background-color: #040A0A;
+}
+
+.background {
+    min-width: 100%;
+    z-index: 0;
+    position: relative;
+}
+
+.wrapper {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 5;
+    margin-bottom: 150px;
+
+    @include md-d {
+        top: 50px;
+    }
+}
+
+//@at-root
+
+.ttl { 
+    color: #FFF;
+    font-family: 'Cormorant';
+    font-size: 100px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    margin-left: 95px;
+
+    @include md-d {
+        margin-left: 0;
+        font-size: 40px;
+    }
+}
+
+.subttl,
+.subTtlSecond {
+    color: #FFF;
+    font-family: 'Cormorant';
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    
+    margin-left: 95px;
+
+    @include md-d {
+        margin-left: 0;
+        font-size: 20px;
+    }
+}
+
+.subTtlSecond {
+    margin: 0px 0px 100px 195px;
+    @include md-d {
+        margin-left: 0;
+        margin-bottom: 40px;
+    }
+}
+
+//@at-root
+
+.description {
+    margin-bottom: 80px;
+}
+
+.askParagraph,
+.descriptionParagraph,
+.green {
+    max-width: 765px;
+
+    color: #FFF;
+    font-family: 'Oswald';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+
+    margin-bottom: 100px;
+
+    @include md-d {
+        font-size: 14px;
+        margin-bottom: 10px;
+        margin-left: 0;
+    }
+}
+
+.descriptionParagraph {
+    max-width: 736px;
+    margin: 0px 0px 20px 95px;
+    @include md-d {
+        font-size: 14px;
+        margin-bottom: 10px;
+        margin-left: 0;
+    }
+}
+
+//@at-root
+
+.chooseTtl {
+    max-width: 1109px;
+
+    color: #FFF;
+    font-family: 'Cormorant';
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+
+    margin-bottom: 20px;
+
+    @include md-d {
+        font-size: 14px;
+    }
+}
+
+.chooseSubttl {
+    color: #43FFD2;
+    font-family: 'Oswald';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+
+    margin-bottom: 74px;
+
+    @include md-d {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+}
+
+//@at-root
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 540px);
+    
+    grid-gap: 10px 30px;
+    position: relative;
+    margin-bottom: 100px;
+    
+    @include lg-d {
+        grid-template-columns: repeat(2, 147px);
+        grid-gap: 10px;
+    }
+}
+
+.gridItem {
+    position: relative;
+    z-index: 5;
+    width: 540px;
+    padding: 10px 20px;
+
+    background: rgba(0, 0, 0, 0.20);
+    backdrop-filter: blur(10px);
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include lg-d {
+        width: 147px;
+        font-size: 14px;
+    }
+}
+
+.gridItemTtl {
+    max-width: 438px;
+
+    color: #FFF;
+    font-family: 'Oswald';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.8px;
+
+    @include md-d {
+        font-size: 14px;
+    }
+}
+
+//@at-root
+
+.workSteps {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    margin-bottom: 184px;
+
+    @include md-d {
+        margin-bottom: 60px;
+    }
+}
+
+.workStepsTtl {
+    color: #43FFD2;
+    font-family: 'Cormorant';
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+
+    padding-bottom: 40px;
+    margin-bottom: 21px;
+
+    position: relative;
+
+    &::before {
+        content: '';
+        width: 60px;
+        height: 1px;
+        background-color: #43FFD2;
+
+        position: absolute;
+        left: 0;
+        bottom: 0px;
+    }
+
+    @include md-d {
+        font-size: 14px;
+    }
+}
+
+.workStep {
+    color: #FFF;
+    font-family: 'Oswald';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+
+    @include md-d {
+        font-size: 14px;
+    }
+}
+
+//@at-root
+
+.formTtl {
+    color: #43FFD2;
+    font-family: 'Oswald';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+
+    margin-bottom: 20px;
+}
+
+.form {
+    height: 637px;
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 40px;
+
+    @include lg-d {
+        height: auto;
+    }
+}
+
+.inputTtl {
+    color: #FFF;
+    font-family: 'Oswald';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.84px;
+
+    margin-bottom: 4px;
+}
+
+.input {
+    outline: none;
+
+    width: 540px;
+    height: 60px;
+    padding: 20px;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+    border: 1px solid #555;
+
+
+    background: transparent;
+    color: #555;
+    font-family: 'Oswald';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.56px;
+
+    @include md-d {
+        width: 300px;
+    }
+}
+
+//@at-root
+
+.policy {
+    width: 342px;
+    margin-top: 10px;
+
+    color: #FFF;
+    font-family: 'Roboto';
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.2px;
+
+    @include md-d {
+        width: 248px;
+    }
+}
+
+.link {
+    color: #D978AC;
+}
+
+//@at-root
+
+.green {
+    color: #43FFD2;
+    margin-bottom: 0;
+}
+
+.navLink {
+    color: #FFF;
+    font-family: 'Oswald';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.48px;
+    text-transform: uppercase;   
+    
+    & a:hover {
+        color: #555;
+    }
+}

@@ -26,6 +26,7 @@
     @include lg-d {
         display: block;
         top: -100px;
+        min-width: 100%;
     }
 }
 

@@ -1,0 +1,17 @@
+@import '../../../Scss/global/global.scss';
+
+.orderSubttl {
+    color: #43FFD2;
+    font-family: 'Oswald';
+    font-size: 14px;
+    margin-bottom: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+
+    @include md-d {
+        font-size: 14px;
+    }
+}

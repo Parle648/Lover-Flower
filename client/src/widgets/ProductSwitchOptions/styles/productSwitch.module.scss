@@ -1,0 +1,191 @@
+@import '../../../Scss/global/global.scss';
+
+.switchOptions {
+    width: 1110px;
+    margin: 0 auto 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    @include lg-d {
+        width: 92%;
+    }
+}
+
+.switchBtns {
+    width: 490px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include lg-d {
+        width: 92%;
+    }
+}
+
+.btn {
+    color: #555;
+    font-family: 'Oswald';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    @include md-d {
+        font-size: 14px;
+    }
+}
+
+.activeBtn {
+    color: #43FFD2;
+}
+
+.slider {
+    width: 716px;
+    height: 1px;
+    background-color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    @include lg-d {
+        width: 92%;
+    }
+}
+
+.sliderTrigger {
+    width: 358px;
+    height: 3px;
+    background-color: #43FFD2;
+    @include lg-d {
+        width: 50%;
+    }
+}
+
+.triggerActive {
+    justify-content: flex-end;
+}
+
+//@at-root
+
+.deliveryVariant {
+    width: 1110px;
+    margin: 0 auto;
+
+    position: relative;
+
+    @include lg-d {
+        width: 92%;
+    }
+}
+
+.seliveryVarTtl {
+    color: #D978AC;
+    font-family: 'Oswald';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+
+    margin-bottom: 20px;
+
+    @include md-d {
+        font-size: 14px;
+    }
+}
+
+.deliveryList {
+    margin-bottom: 60px;
+
+    @include md-d {
+        margin-bottom: 40px;
+    }
+}
+
+.deliveryListItem {
+    color: #FFF;
+    font-family: 'Oswald';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 26px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+
+    margin-left: 30px;
+    margin-bottom: 10px;
+    max-width: 880px;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 0;
+        transform: translate(-27px, 0);
+        width: 4px;
+        height: 4px;
+        margin: 0px 13px;
+        background-color: #fff;
+        border-radius: 50%;
+    }
+
+    @include lg-d {
+        max-width: 310px;
+    }
+    
+    @include md-d {
+        font-size: 14px;
+    }
+}
+
+.greenText {
+    color: #43FFD2;
+    width: auto;
+}
+
+//@at-root
+
+.comments {
+    width: 1110px;
+    margin: 0 auto;
+
+    position: relative;
+
+    @include lg-d {
+        width: 92%;
+    }
+}
+
+//@at-root
+
+.prodPageSlider {
+    // overflow: hidden;
+    width: 1110px;
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.prodPageBtns {
+    width: 1350px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    @include lg-d {
+        display: none;
+    }
+}

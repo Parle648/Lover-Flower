@@ -1,0 +1,144 @@
+@import '../../../Scss/global/global.scss';
+
+.productAbout {
+    width: 1110px;
+    margin: 0 auto;
+    height: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 80px;
+
+    position: relative;
+
+    @include lg-d {
+        width: 92%;
+    }
+}
+
+.galary {
+    display: grid;
+    grid-template-columns: 160px 350px;
+    grid-template-rows: 185px;
+    grid-gap: 30px 20px;
+}
+
+//@at-root
+
+.goBack {
+    color: #FFF;
+    font-family: 'Oswald';
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+
+    width: 51px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.descriptionTtl {
+    color: #FFF;
+    font-family: 'Cormorant';
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+
+    @include md-d {
+        font-size: 20px;
+    }
+}
+
+.cost {
+    color: #43FFD2;
+    font-family: 'Oswald';
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    
+    margin-bottom: 20px;
+
+    @include md-d {
+        font-size: 20px;
+    }
+}
+
+.structure,
+.productDescription,
+.category,
+.types {
+    color: #FFF;
+    font-family: 'Oswald';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.56px;
+    text-transform: uppercase;
+
+    margin-bottom: 20px;
+    max-width: 474px;
+}
+
+.category,
+.types {
+    font-size: 12px;
+    margin-bottom: 0;
+    font-weight: 300;
+}
+
+.types {
+    margin-bottom: 70px;
+}
+
+.buyInterface {
+    width: 445px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+    z-index: 1px;
+
+    @include md-d {
+        width: 100%;
+    }
+}
+
+.counter {
+    width: 160px;
+    height: 55px;
+    flex-shrink: 0;
+    border: 0.5px solid #555;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 13px 16px;
+    color: #555;
+    font-family: 'Oswald';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    @include md-d {
+        width: 108px;
+        height: 55px;
+    }
+}

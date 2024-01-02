@@ -1,0 +1,91 @@
+@import '../../../Scss/global/global.scss';
+
+.additionalTtl {
+    text-align: center;
+    margin-bottom: 45px;
+    color: #D978AC;
+    font-family: 'Oswald';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+
+    position: relative;
+}
+
+.aditionalOptions {
+    width: 1110px;
+    margin: 0 auto 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+
+    @include lg-d {
+        width: 92%;
+        flex-wrap: wrap;
+    }
+
+    @include md-d {
+        justify-content: center;
+    }
+}
+
+.option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 255px;
+    padding: 30px 16px;
+    height: 237px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.30);
+    backdrop-filter: blur(10px);
+    margin-bottom: 30px;
+
+    position: relative;
+    &::before {
+        content: '';
+        width: 30px;
+        height: 30px;
+        background-color: #000;
+        border-radius: 50%;
+        position: absolute;
+
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.ttlOption {
+    width: 155px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #43FFD2;
+    text-align: center;
+    font-family: 'Oswald';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.56px;
+    text-transform: uppercase;
+}
+
+.paragraphOption {
+    width: 220px;
+    text-align: center;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Oswald';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.84px;
+}

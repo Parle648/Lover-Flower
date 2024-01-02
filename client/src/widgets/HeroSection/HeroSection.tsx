@@ -4,9 +4,9 @@ import background from '../../img/hero-section.png';
 import backgroundMobile from '../../img/heromobile.png';
 import styles from './styles/hero.module.scss';
 import '../../Scss/styles.scss';
-import TopHeader from '../TopHeader/TopHeader';
+import TopHeader from '../TopHeader/TopHeader.tsx';
 import Header from '../Header/index.tsx';
-
+ 
 const HeroSection = () => {
     const [scroll, setScroll] = React.useState(false);
 

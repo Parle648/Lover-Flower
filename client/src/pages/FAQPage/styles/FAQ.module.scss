@@ -49,50 +49,6 @@
     }
 }
 
-.question {
-    padding: 20px 20px 30px;
-    margin-bottom: 10px;
-    border: 1px solid #43FFD2;
-}
-
-.questionTtl {
-    color: #43FFD2;
-    font-family: 'Oswald';
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-transform: uppercase;
-
-    margin-bottom: -10px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-
-.questionParagraph {
-    max-width: 785px;
-    margin-top: 30px;
-    height: auto;
-
-    color: #FFF;
-    font-family: 'Oswald';
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
-
-    transition: .35s;
-}
-
-.paragraphDisabled {
-    height: 0;
-    overflow: hidden;
-    margin: 0;
-}
-
 .navLink {
     color: #FFF;
     font-family: 'Oswald';

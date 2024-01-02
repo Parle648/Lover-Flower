@@ -8,7 +8,14 @@ type ReviewsForm = {
 };
 
 const ReviewBlock = ({id}: ReviewsForm) => {
-    const { register, handleSubmit } = useForm();
+    const {   
+        register,
+        formState: {errors},
+        handleSubmit,
+        reset,
+    } = useForm({
+        mode: 'onBlur',
+    });
     const [reviews, setReviews] = React.useState([]);
     let [rating, setRating]= React.useState(1);
 
@@ -29,6 +36,8 @@ const ReviewBlock = ({id}: ReviewsForm) => {
                 body: JSON.stringify(data),
             }).then((res: any) => res.json())
             .then((res: any) => console.log(res));
+
+            reset()
         } catch (err) {
             console.error(err);
         };
@@ -42,7 +51,8 @@ const ReviewBlock = ({id}: ReviewsForm) => {
                         <div key={elem.id}>
                             <h2 className={styles.laps}>"</h2>
                             <h2 className={styles.review}>{elem.review}</h2>
-                            <h2 className={styles.name}>{elem.name}, date</h2>
+                            <Rating choosedRating={elem.rating} setRating={setRating}/>
+                            <h2 className={styles.name}>{elem.name}</h2>
                         </div>
                     )
                 }
@@ -54,13 +64,35 @@ const ReviewBlock = ({id}: ReviewsForm) => {
             </div>
             }
             <form onSubmit={handleSubmit(sendReview)}>
+                
                 <h2 className={styles.inputTtl}>Ваш отзыв*</h2>
-                <input className={styles.input} type="text" placeholder='Введите комментарий' {...register("review")}/>
+                <input className={`input ${errors?.review && 'wrongValue'}`} placeholder='Введите комментарий' id='' {...register('review', {
+                    required: true,
+                    pattern: {
+                        value: /^[А-Яа-яЁё\s]+$/,
+                        message: 'Введите ваше имя',
+                    }
+                })}/>
+                {errors?.review && <h2 className='errorMessage'>Введите ваш отзыв</h2>}
                 <h2 className={styles.inputTtl}>Имя*</h2>
-                <input className={styles.input} type="text" placeholder='Введите ваше имя' {...register("name")}/>
+                <input className={`input ${errors?.name && 'wrongValue'}`} placeholder='Введите ваше имя' id='' {...register('name', {
+                    required: true,
+                    pattern: {
+                        value: /^[А-Яа-яЁё\s]+$/,
+                        message: 'Введите ваше имя',
+                    }
+                })}/>
+                {errors?.name && <h2 className='errorMessage'>Введите ваше имя</h2>}
                 <h2 className={styles.inputTtl}>E-mail*</h2>
-                <input className={styles.input} type="text" placeholder='Введите вашу почту' {...register("mail")}/>
-                <Rating choosedRating='1' setRating={setRating}/>
+                <input className={`input ${errors?.mail && 'wrongValue'}`} placeholder='Введите вашу почту' {...register("mail", {
+                    required: 'Поле имя є обов\'язковим',
+                    pattern: {
+                        value: /^\S+@\S+\.\S+$/,
+                        message: 'Будь ласка, введіть правильний адресу електронної пошти'
+                    }
+                })}/>
+                {errors?.mail && <h2 className='errorMessage'>Введите вашу почту</h2>}
+                <Rating choosedRating={undefined} setRating={setRating}/>
                 <br />
                 <button className='greenBtn'>отправить</button>
 

@@ -1,0 +1,44 @@
+@import '../../../Scss/global/global.scss';
+
+.prodPageSlider {
+    width: 1110px;
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.prodPageBtns {
+    width: 1350px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    @include lg-d {
+        display: none;
+    }
+}
+
+.prodPageSliderArrow {
+    cursor: pointer;
+    z-index: 100;
+}
+
+.sliderLine {
+    width: 2252px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-bottom: 19px;
+    transition: .35s;
+    background-color: transparent;
+    @include md-d {
+        width: 92%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
