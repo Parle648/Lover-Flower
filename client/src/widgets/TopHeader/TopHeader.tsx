@@ -19,8 +19,14 @@ const TopHeader = () => {
     const toggleMenu = () => {
         setDisabled(!disabled)
     }
+
+    const [scroll, setScroll] = React.useState(false);
+
+    document.addEventListener('scroll', () => {
+        window.scrollY <= 500 ? setScroll(false) : setScroll(true);
+    });
     return (
-        <div className={styles.header}>
+        <div className={`${styles.header} ${(document.body.clientWidth < 800) || scroll && styles.headerActive}`}>
             {document.body.clientWidth > 800 && <Logo></Logo>}
             {document.body.clientWidth < 800 && 
                 <div className={styles.mobileNav}>

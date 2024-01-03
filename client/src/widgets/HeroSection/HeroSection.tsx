@@ -17,8 +17,9 @@ const HeroSection = () => {
     return (
         <div className={styles.heroSection}>
             <img className={styles.background} src={document.body.clientWidth > 800 ? background : backgroundMobile} alt="background" />
-            {document.body.clientWidth > 800 ? <Header /> : <TopHeader />}
-            {(scroll && document.body.clientWidth > 800) && <TopHeader />}
+            <Header />
+            <TopHeader />
+            {(scroll && document.body.clientWidth > 800) && <TopHeader visible='true' />}
             <h2 className={`${styles.btnTtl} Oswald400`}>Создаём для тех, кто ценит свежесть и изящество цветка</h2>
             <Link to='/catalog'><button className={`${styles.btn} greenBtn`}>смотреть каталог</button></Link>
         </div>

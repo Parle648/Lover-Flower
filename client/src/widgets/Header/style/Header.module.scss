@@ -6,11 +6,15 @@
     left: 50%;
     transform: translate(-50%, 0);
     position: absolute;
-    z-index: 999;
+    z-index: 9;
     transition: .35s;
 
     @include xl-d {
         width: 92%;
+    }
+
+    @include md-d {
+        display: none;
     }
 }
 
