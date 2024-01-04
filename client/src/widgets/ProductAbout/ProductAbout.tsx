@@ -5,6 +5,7 @@ import first from '../../img/first-product-img.png';
 import second from '../../img/second-product-img.png';
 import { useDispatch } from 'react-redux';
 import { addProduct } from '../../redux/slices/Busket';
+import { useSelector } from 'react-redux';
 
 type Product = {
     id: string;
@@ -27,16 +28,28 @@ const ProductAbout = ({id}: {id: string}) => {
     const [data, setData] = React.useState<Product>();
     const [disabled, setDisabled] = React.useState(false);
     let [count, setCount] = React.useState(1);
+    const basket = useSelector((state: any) => state.basket.value)
 
     React.useEffect(() => {
-        fetch(`http://localhost:5000/api/products/getproduct/${id}`).then((res: any) => res.json()).then((res: any) => setData(res))
+        fetch(`http://localhost:5000/api/products/getproduct/${id}`).then((res: any) => res.json())
+        .then((res: any) => setData(res))
+        .then((res: any) => {
+            console.log(Number(id.slice(1)));
+            
+            if (JSON.parse(localStorage.BusketInform).some((obj: any) => obj.id === Number(id.slice(1)))) {
+                setDisabled(true)
+            } else {
+                setDisabled(false)
+            }
+            console.log(disabled);
+        })
     }, []);
 
-    React.useEffect(() => {
-        if (JSON.parse(localStorage.BusketInform).some((obj: any) => obj.id === Number(data?.id?.slice(1)))) {
-            setDisabled(true)
-        }
-    }, []);
+    // React.useEffect(() => {
+    //     if (JSON.parse(localStorage.BusketInform).some((obj: any) => obj.id === Number(data?.id?.slice(1)))) {
+    //         setDisabled(true)
+    //     }
+    // }, []);
     
     function addToBusket(event: React.MouseEvent<HTMLButtonElement>) {
         const productInformData = { id: data?.id, cost: data?.cost, ttl: data?.title, count }
