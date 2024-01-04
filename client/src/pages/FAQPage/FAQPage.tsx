@@ -2,13 +2,14 @@ import TopHeader from '../../widgets/TopHeader/TopHeader';
 import Footer from '../../widgets/Footer/index.tsx';
 import styles from './styles/FAQ.module.scss';
 import background from '../../img/faq-background.png';
+import backgroundMobile from '../../img/FAQ-mobile.png';
 import FAQBlock from '../../widgets/FAQBlock/FAQBlock';
 
 const FAQPage = () => {
     return (
         <div className={styles.block}>
             <TopHeader />
-            <img className={styles.background} src={background} alt="" />
+            <img className={styles.background} src={document.body.clientWidth > 800 ? background : backgroundMobile} alt="" />
 
             <div className={styles.wrapper}>
                 <span className={styles.navLink}><a href='/'>Главная </a> / <a href='/questions'>faq</a></span>

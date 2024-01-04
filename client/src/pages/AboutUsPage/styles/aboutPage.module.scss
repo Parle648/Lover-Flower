@@ -6,14 +6,14 @@
 
 .background {
     min-width: 100%;
-    object-fit: cover;
+    max-height: 2560px;
 
     @include lg-d {
         padding-bottom: 930px;
     }
 
     @include md-d {
-        height: auto;
+        height: 2540px;
         padding-bottom: 388px;
     }
 }

@@ -8,11 +8,9 @@
     align-items: center;
     justify-content: space-between;
 
-    display: none;
     position: fixed;
     top: 0;
     z-index: 11;
-    display: none;
 
     @include lg-d {
         padding: 20px 20px;
@@ -21,10 +19,6 @@
     @include md-d {
         display: flex;
     }
-}
-
-.headerActive {
-    display: flex;
 }
 
 .text {

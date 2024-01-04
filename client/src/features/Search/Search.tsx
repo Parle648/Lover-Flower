@@ -7,6 +7,7 @@ import img from '../../img/product-img.png';
 const Search = () => {
     const [disabled, setDisabled] = React.useState(false);
     const [value, setValue] = React.useState('');
+    const [choosedString, setChoosedString] = React.useState('');
     const [products, setproducts] = React.useState([]);
 
     function openSearch(event: React.MouseEvent<HTMLElement>) {
@@ -26,8 +27,9 @@ const Search = () => {
         setValue(event.target.value);
     };
 
-    function searchByString(event: React.MouseEvent<HTMLElement>) {
+    function searchByString(event: any) {
         event.preventDefault();
+        setChoosedString(value)
         const string = value.toUpperCase().replaceAll(' ', '%20');
 
         try {
@@ -44,10 +46,10 @@ const Search = () => {
     };
 
     return (
-        <div className={styles.search}>
+        <form className={styles.search} onSubmit={searchByString}>
             <label className={`${styles.block} ${disabled && styles.blockActive}`}>
                 <img src={search} alt="search" onClick={searchByString}/>
-                <input className={styles.text} type="text" placeholder='ПОИСК' value={value} onClick={openSearch} onInput={inputString}/>
+                <input className={styles.text} type="text" placeholder='ПОИСК' value={value} onClick={openSearch} onInput={inputString} onSubmit={searchByString}/>
                 <div className={`${styles.close} ${disabled && styles.closeActive}`}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none" onClick={closeSearch}>
                         <path d="M13.4294 4.06152L13.9385 4.57056L4.57056 13.9378L4.06152 13.4291L13.4294 4.06152Z" fill="#7C7C7C"/>
@@ -57,7 +59,7 @@ const Search = () => {
             </label>
 
             <div className={`${styles.ressultContainer} ${disabled && styles.ressultContainerActive}`}>
-                    <h2 className={styles.serchTtl}>Результат поиска: розы</h2>
+                    <h2 className={styles.serchTtl}>Результат поиска: {choosedString}</h2>
                     {products.length !== 0 ? 
                     <div className={styles.productWrapper}>
                         {products.map((obj: any) => {
@@ -73,7 +75,7 @@ const Search = () => {
                     </div>
                     }
                 </div>
-        </div>
+        </form>
     );
 };
 

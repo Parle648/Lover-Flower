@@ -6,6 +6,7 @@
 
 .background {
     min-width: 100%;
+    max-height: 2560px;
     object-fit: cover;
     position: relative;
     
@@ -34,6 +35,25 @@
     @include md-d {
         position: relative;
         top: 50px;
+    }
+}
+
+.mainTtl {
+    color: #FFF;
+    font-family: 'Cormorant';
+    font-size: 100px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase; 
+    margin-bottom: 30px;  
+    
+    @include md-d {
+        font-size: 40px;
+        font-style: normal;
+        letter-spacing: 0.8px;
+        margin-bottom: 20px;
     }
 }
 
