@@ -42,6 +42,7 @@ const Basket = () => {
             <div className={`${styles.busketAside} ${busketOpened && styles.busketOpened}`} >
                 <div>
                     <h2 className={styles.asideTtl}>Ваша корзина <img className={styles.closeBtn} src={close} alt="close" onClick={toggleBusket}/></h2>
+                    <div className={busketOpened && styles.blackBackround}></div>
                     {addedPeoducts.map((obj: Product) => {
                         return <ProductSnippet id={obj.id} ttl={obj.ttl} cost={obj.cost} count={obj.count} />
                     })}
