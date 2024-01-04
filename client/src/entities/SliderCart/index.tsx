@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { addProduct } from '../../redux/slices/Busket.js';
+import store from '../../redux/store';
 import styles from './styles/slidercart.module.scss';
 
 type CartType = {
@@ -23,15 +24,26 @@ const Index = ({id, img, ttl, cost}: CartType) => {
             localStorage.BusketInform = JSON.stringify(JSON.parse(localStorage.BusketInform).concat(productInformData));
             dispatch(addProduct(productInformData));
         }
-
     }
 
     const [disabled, setDisabled] = React.useState(false)
 
+    store.subscribe(() => {
+        if (store.getState().basket.value.some((obj: any) => obj.id === id)) {
+            setDisabled(true)
+        } else {
+            setDisabled(false)
+        }
+    })
+
     React.useEffect(() => {
         if (JSON.parse(localStorage.BusketInform).some((obj: any) => obj.id === id)) {
             setDisabled(true)
+        } else {
+            setDisabled(false)
         }
+        window.addEventListener('storage', () => {
+        })
     }, [])
 
     return (

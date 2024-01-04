@@ -43,9 +43,11 @@ const Basket = () => {
                 <div>
                     <h2 className={styles.asideTtl}>Ваша корзина <img className={styles.closeBtn} src={close} alt="close" onClick={toggleBusket}/></h2>
                     <div className={busketOpened && styles.blackBackround}></div>
-                    {addedPeoducts.map((obj: Product) => {
-                        return <ProductSnippet id={obj.id} ttl={obj.ttl} cost={obj.cost} count={obj.count} />
-                    })}
+                    <div className={styles.products}>
+                        {addedPeoducts.map((obj: Product) => {
+                            return <ProductSnippet id={obj.id} ttl={obj.ttl} cost={obj.cost} count={obj.count} />
+                        })}
+                    </div>
                 </div>
                 <div>
                     <p className={styles.asideParagraph}>
