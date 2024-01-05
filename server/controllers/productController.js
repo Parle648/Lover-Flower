@@ -19,7 +19,7 @@ class productController {
             const products = await Products.findAll();
             let result;
 
-            if (types.legth !== 0) {
+            if (types.length !== 0) {
                 // sort when have types requirement
                 const byTypes = types.map(type => {
                     const arr = products.map(prod => {
@@ -37,8 +37,6 @@ class productController {
                     };
                 })
 
-                console.log( Object.values(props).flat());
-            
                 const byProps = Object.values(props).flat().map(prop => {
                     const arr = products.map(prod => {
                         if (prod.light.includes(prop.toUpperCase())) {
@@ -65,9 +63,8 @@ class productController {
                     result = byProps.concat(byTypes);
                 }
                 
-                console.log(new Set(result));
                 return res.json(result)
-            } else if (props.legth !== 0) { 
+            } else if (Object.values(props).flat().length !== 0) { 
                 // sort when have no types requirement
                 const byProps = props.map(prop => {
                     const arr = products.map(prod => {
@@ -98,15 +95,14 @@ class productController {
             } else {
                 // sortBy when dont have any requirements
                 if (sortBy === "ПО ВОЗРОСТАНИЮ") {
-                    result = byProps.concat(byTypes)
-                    .sort((a, b) => a.cost - b.cost);
+                    result = products.sort((a, b) => a.cost - b.cost);
                 } else if (sortBy === "ПО УБЫВАНИЮ") {
-                    result = byProps.concat(byTypes)
-                    .sort((a, b) => b.cost - a.cost);
+                    result = products.sort((a, b) => b.cost - a.cost);
+                } else {
+                    result = products
                 }
+                return res.json(result)
             }
-
-            return res.json(result)
         } catch (err) {
             console.error(err);
         };

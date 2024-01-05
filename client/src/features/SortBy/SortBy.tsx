@@ -38,7 +38,7 @@ const SortBy = () => {
     return (
         <div className={styles.block}>
             <div className={styles.head}>
-                <span className={styles.headTtl} datatype='rating'>По популярности</span>
+                <span className={`headTtl ${styles.headTtl}`} datatype='rating'>По популярности</span>
                 <img className={styles.arrow} src={arrow} alt="arrow" onClick={openBody}/>
             </div>
             <div className={`${styles.body} ${bodyActive && styles.bodyActive}`}>
