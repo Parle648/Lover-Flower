@@ -1,5 +1,11 @@
 @import '../../../Scss/global/global.scss';
 
+.container {
+    width: 1110px;
+    margin: 0 auto;
+    position: relative;
+}
+
 .prodPageSlider {
     width: 1110px;
     height: auto;
@@ -10,11 +16,12 @@
 
 .prodPageBtns {
     width: 1350px;
-    margin: 0 auto;
+    margin-top: 20%;
+    transform: translate(-10%, -50%);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
+    position: absolute;
     z-index: 10;
     @include lg-d {
         display: none;

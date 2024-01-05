@@ -25,7 +25,7 @@ const Slider = () => {
     }
     
     return (
-        <div>
+        <div className={styles.container}>
             <div className={styles.prodPageBtns}>
                 <img className={styles.prodPageSliderArrow} src={arrow} alt="" onClick={moveLeft}/>
                 <img className={styles.prodPageSliderArrow} src={arrowSecond} alt="" onClick={moveRight}/>
