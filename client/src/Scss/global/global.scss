@@ -241,6 +241,7 @@ $brackpoints: (
 
 .label {
     position: relative;
+    width: 540px;
 }
 
 .errorMessage {
@@ -253,6 +254,7 @@ $brackpoints: (
     letter-spacing: 0.56px;
     background-color: transparent;
     margin-top: -10px;
+    max-width: 540px;
 }
 
 .exlamation {

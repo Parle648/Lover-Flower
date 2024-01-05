@@ -41,6 +41,8 @@ const OrderForm = () => {
             body: JSON.stringify(data),
         }).then((responce: any) => responce.json())
         .then((result: any) => {
+            console.log(result);
+            
             localStorage.BusketInform = JSON.stringify([]);
             window.location.assign('/paysuccess')
         })

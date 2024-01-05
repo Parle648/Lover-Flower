@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.08440ff1.css",
-    "main.js": "/static/js/main.1056300e.js",
+    "main.css": "/static/css/main.030cf4df.css",
+    "main.js": "/static/js/main.7037232a.js",
     "static/media/delivery-page-background.png": "/static/media/delivery-page-background.e8e3d6b987418dd891aa.png",
     "static/media/corporative-client-background.png": "/static/media/corporative-client-background.a12ee145fcb98c071f59.png",
     "static/media/product-page-background.png": "/static/media/product-page-background.9a852a07627b87a384b2.png",
@@ -24,6 +24,7 @@
     "static/media/descriptionmobile.png": "/static/media/descriptionmobile.96eb3523b972d70237a0.png",
     "static/media/contacts-mobile-background.png": "/static/media/contacts-mobile-background.74fce006ba8be82a008f.png",
     "static/media/howmakeorder.png": "/static/media/howmakeorder.3be6a956ab91a1cebf68.png",
+    "static/media/FAQ-mobile.png": "/static/media/FAQ-mobile.a47d66f9ecf3f2e96b87.png",
     "static/media/not-found-mobile.png": "/static/media/not-found-mobile.ffcb3e553221c641ad51.png",
     "static/media/heromobile.png": "/static/media/heromobile.b6b522d537295dc904a9.png",
     "static/media/call-modal-background.png": "/static/media/call-modal-background.53574a59a2e60190ddca.png",
@@ -59,11 +60,11 @@
     "static/media/cross.svg": "/static/media/cross.47ff975a139ff794895a6f29f3e76824.svg",
     "static/media/sliderarrow.svg": "/static/media/sliderarrow.7664464ae7e8dd185481253e1e656797.svg",
     "static/media/sliderrightarrow.svg": "/static/media/sliderrightarrow.c06905d7f7abeeeaea641d3f5a82261a.svg",
-    "main.08440ff1.css.map": "/static/css/main.08440ff1.css.map",
-    "main.1056300e.js.map": "/static/js/main.1056300e.js.map"
+    "main.030cf4df.css.map": "/static/css/main.030cf4df.css.map",
+    "main.7037232a.js.map": "/static/js/main.7037232a.js.map"
   },
   "entrypoints": [
-    "static/css/main.08440ff1.css",
-    "static/js/main.1056300e.js"
+    "static/css/main.030cf4df.css",
+    "static/js/main.7037232a.js"
   ]
 }
